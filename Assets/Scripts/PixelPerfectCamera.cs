@@ -3,7 +3,6 @@ using System.Collections;
 
 public class PixelPerfectCamera : MonoBehaviour
 {
-
     public static float pixelsToUnits = 1f;
     public static float scale = 1f;
 
