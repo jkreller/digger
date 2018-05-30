@@ -2,9 +2,9 @@ fileFormatVersion: 2
 guid: 3dc71d01c133645e1912d8bca4b73055
 TextureImporter:
   fileIDToRecycleName:
-    21300000: mole_0
-    21300002: mole_1
-    21300004: mole_2
+    21300000: mole
+    21300002: mole_run1
+    21300004: mole_run2
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -107,7 +107,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: mole_0
+      name: mole
       rect:
         serializedVersion: 2
         x: 0
@@ -127,7 +127,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mole_1
+      name: mole_run1
       rect:
         serializedVersion: 2
         x: 64
@@ -147,7 +147,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mole_2
+      name: mole_run2
       rect:
         serializedVersion: 2
         x: 128
