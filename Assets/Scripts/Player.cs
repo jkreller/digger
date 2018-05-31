@@ -17,6 +17,6 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        var absValX = Mathf.Abs(body2D.elocity.x);
+        var absValX = Mathf.Abs(body2D.velocity.x);
 	}
 }
