@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.SceneManagement;
 
 public class MolePlayer : Humanoid {
     public Tilemap digableMap;
@@ -198,7 +199,7 @@ public class MolePlayer : Humanoid {
         }
 
         if (other.gameObject.name == "LevelEnd") {
-            Respawn();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
 
     }
