@@ -7,6 +7,10 @@ public class RoboEnemy : Humanoid {
     protected bool playerIsHittingTop = false;
     protected bool hittingPlayer = false;
     protected MolePlayer molePlayer;
+    public float timerBeforeMove;
+    public bool moveIfyouSee;
+    private bool move = false;
+
 
     protected override void Start()
     {
@@ -20,40 +24,66 @@ public class RoboEnemy : Humanoid {
         }
     }
 
+    void OnBecameVisible()
+    {
+        move = true;
+    }
+
     // Update is called once per frame
-    protected override void Update () {
+    protected override void Update()
+    {
         base.Update();
 
-        if (!hittingPlayer) {
-            // moving sidewards and change direction when hit collider
-            if (isHittingSide > 0)
-            {
-                Move("right");
-            }
-            else if (isHittingSide < 0)
-            {
-                Move("left");
-            }
-        }
-	}
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Player")) {
-            hittingPlayer = true;
-
-            foreach (ContactPoint2D hit in collision.contacts)
+            if (!hittingPlayer)
             {
-                // check if player hits top or side
-                if (hit.normal.y < 0) {
-                    molePlayer.enemieJump();
-                    Destroy(gameObject);
-                    Debug.Log("tot");
-                } else {
-                    molePlayer.Respawn();
+
+                if (timerBeforeMove >= 0)
+                {
+                    timerBeforeMove -= Time.deltaTime;
+                }
+                else
+                {
+                if (move)
+                {
+                    // moving sidewards and change direction when hit collider
+                    if (isHittingSide > 0)
+                    {
+                        Move("right");
+                    }
+                    else if (isHittingSide < 0)
+                    {
+                        Move("left");
+                    }
                 }
             }
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+
+       
+
+            if (collision.collider.CompareTag("Player"))
+            {
+                hittingPlayer = true;
+
+                foreach (ContactPoint2D hit in collision.contacts)
+                {
+                    // check if player hits top or side
+                    if (hit.normal.y < 0)
+                    {
+                        molePlayer.enemieJump();
+                        Destroy(gameObject);
+                        Debug.Log("tot");
+                    }
+                    else
+                    {
+                        molePlayer.Respawn();
+                    }
+                }
+            }
     }
 
     void OnCollisionStay2D(Collision2D collision)
