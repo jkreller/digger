@@ -112,6 +112,63 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &11858831
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4980712851320651433, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1053
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980712851320651433, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2266.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980712851320651433, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2632.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980712851320651433, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980712851320651433, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980712851320651433, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980712851320651433, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980712851320651433, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980712851320651433, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980712851320651433, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4980712851320651433, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7608747274835860887, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
+      propertyPath: m_Name
+      value: FinishObject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 801a3922ce70e4e72880f26311fe4541, type: 3}
 --- !u!1001 &1330633743
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -129,7 +186,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4965932505848480, guid: abc15c2661dcf470491e6fd4ca00084e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4965932505848480, guid: abc15c2661dcf470491e6fd4ca00084e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -513,6 +570,22 @@ PrefabInstance:
     - target: {fileID: 767786661386121906, guid: f06df41bd4b714b54b6002f9b17e9fe0, type: 3}
       propertyPath: m_Name
       value: GridLevel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3227280480796815707, guid: f06df41bd4b714b54b6002f9b17e9fe0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 3681679542502940842, guid: f06df41bd4b714b54b6002f9b17e9fe0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2939400058228690557, guid: f06df41bd4b714b54b6002f9b17e9fe0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 55409726964242777, guid: f06df41bd4b714b54b6002f9b17e9fe0, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f06df41bd4b714b54b6002f9b17e9fe0, type: 3}

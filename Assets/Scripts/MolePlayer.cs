@@ -201,12 +201,13 @@ public class MolePlayer : Humanoid {
             Respawn();
         }
 
+        if (other.gameObject.CompareTag("Finish")) {
+            gameLogic.nextScene();
+        }
     }
 
     public void enemieJump() {
         movingDirections.Add("enemieJump");
         Move(movingDirections);
     }
-
-	
 }
