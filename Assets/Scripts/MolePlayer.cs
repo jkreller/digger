@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.SceneManagement;
 
 public class MolePlayer : Humanoid {
     public Tilemap digableMap;
@@ -42,9 +41,7 @@ public class MolePlayer : Humanoid {
         checkerRightLower = GameObject.Find("CheckerRightLower").transform;
 
         logic = GameObject.Find("GameLogic");
-        if (logic) {
-            gameLogic = logic.GetComponent<GameLogic>();
-        }
+        gameLogic = logic.GetComponent<GameLogic>();
     }
 	
 	// Update is called once per frame
@@ -149,11 +146,8 @@ public class MolePlayer : Humanoid {
         var digTileDistance = 32.0f;
         var digTileHeight = 32.0f;
         var grid = digableMap.GetComponentInParent<Grid>();
-        var tilesToDestroy = new ArrayList();
 
-        if (!grid) {
-            return;
-        }
+        var tilesToDestroy = new ArrayList();
 
         if (Input.GetKey("down"))
         {
@@ -185,7 +179,6 @@ public class MolePlayer : Humanoid {
             tilesToDestroy.Add(tilePosition);
         }
 
-        // destroy selected tiles
         foreach (Vector3 position in tilesToDestroy) {
             var positionCell = grid.WorldToCell(position);
             digableMap.SetTile(positionCell, null);
@@ -193,13 +186,15 @@ public class MolePlayer : Humanoid {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
+        Debug.Log(other.gameObject.name);
+
         if (other.gameObject.CompareTag("coin")) {
             Destroy(other.gameObject);
             gameLogic.addDiamonds(1);
         }
 
         if (other.gameObject.name == "LevelEnd") {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Respawn();
         }
 
     }
