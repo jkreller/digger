@@ -18,7 +18,7 @@ public class Background : MonoBehaviour {
         mainCamera = FindObjectOfType<Camera>();
 
         var cameraPos = mainCamera.transform.position;
-        cameraPos.z = 1;
+        cameraPos.z = transform.position.z;
         transform.position = cameraPos;
 
         SetSize();
@@ -35,7 +35,7 @@ public class Background : MonoBehaviour {
             if (moveWithPlayer) {
                 // keep staying with player
                 var playerPos = molePlayer.transform.position;
-                playerPos.z = 1;
+                playerPos.z = transform.position.z;
                 transform.position = playerPos;
             }
 
