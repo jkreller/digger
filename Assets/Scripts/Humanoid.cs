@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Humanoid : MonoBehaviour {
     public float speed = 80;
@@ -68,6 +69,6 @@ public class Humanoid : MonoBehaviour {
     }
 
     public void Respawn() {
-        transform.position = startingPoint;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }
