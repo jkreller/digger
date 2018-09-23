@@ -6,8 +6,8 @@ using UnityEngine.Tilemaps;
 public class MolePlayer : Humanoid {
     public Tilemap digableMap;
     public float checkerRadius = 5;
+
     private GameLogic gameLogic;
-    private GameObject logic;
     private bool isGrounded = false;
     private bool isHittingLeft = false;
     private bool isHittingRight = false;
@@ -22,6 +22,7 @@ public class MolePlayer : Humanoid {
     private Touch startTouch;
     private Touch endTouch;
     private List<string> movingDirections = new List<string>();
+    private bool hasFinished;
 
     // Use this for initialization
     protected override void Start () {
@@ -40,7 +41,7 @@ public class MolePlayer : Humanoid {
         checkerRightUpper = GameObject.Find("CheckerRightUpper").transform;
         checkerRightLower = GameObject.Find("CheckerRightLower").transform;
 
-        logic = GameObject.Find("GameLogic");
+        var logic = GameObject.Find("GameLogic");
         gameLogic = logic.GetComponent<GameLogic>();
     }
 	
@@ -186,24 +187,24 @@ public class MolePlayer : Humanoid {
     }
 
     void OnTriggerEnter2D(Collider2D other) {
-        Debug.Log(other.gameObject.name);
-
         if (other.gameObject.CompareTag("coin")) {
             Destroy(other.gameObject);
             gameLogic.addDiamonds(1);
         }
 
         if (other.gameObject.name == "LevelEnd") {
-            Respawn();
+            if (!hasFinished) {
+                Respawn();
+            }
         }
 
         if (other.gameObject.CompareTag("Finish")) {
+            hasFinished = true;
             gameLogic.nextScene();
         }
     }
 
     public void enemieJump() {
-        movingDirections.Add("enemieJump");
-        Move(movingDirections);
+        Move("enemieJump");
     }
 }

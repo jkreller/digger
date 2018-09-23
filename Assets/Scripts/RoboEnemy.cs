@@ -76,7 +76,6 @@ public class RoboEnemy : Humanoid {
                     {
                         molePlayer.enemieJump();
                         Destroy(gameObject);
-                        Debug.Log("tot");
                     }
                     else
                     {

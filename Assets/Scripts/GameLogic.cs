@@ -65,6 +65,7 @@ public class GameLogic : MonoBehaviour {
      */
     private IEnumerator Fade(string direction, bool actionAfter = true) {
         var speed = Time.deltaTime / fadingSpeed;
+
         switch (direction) {
             case "In":
                 while (fadeCount < 1f)
