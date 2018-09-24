@@ -8,6 +8,7 @@ public class MolePlayer : Humanoid {
     public float checkerRadius = 5;
 
     private GameLogic gameLogic;
+    private InputController inputController;
     private bool isGrounded = false;
     private bool isHittingLeft = false;
     private bool isHittingRight = false;
@@ -42,7 +43,10 @@ public class MolePlayer : Humanoid {
         checkerRightLower = GameObject.Find("CheckerRightLower").transform;
 
         var logic = GameObject.Find("GameLogic");
-        gameLogic = logic.GetComponent<GameLogic>();
+        if (logic) {
+            gameLogic = logic.GetComponent<GameLogic>();
+            inputController = gameLogic.GetComponent<InputController>();
+        }
     }
 	
 	// Update is called once per frame
@@ -65,62 +69,14 @@ public class MolePlayer : Humanoid {
         isGrounded = isGroundedLeft || isGroundedRight;
 
         movingDirections = new List<string>();
-        
-        float movingHorizontal = 0f;
-        bool isJumping = false;
 
-        if (onMobileDevice)
-        {
-            // controls for mobile devices
-            var touchOrigin = -Vector2.one;
-
-            for (int i = 0; i < Input.touchCount; i++)
-            {
-                Touch touch = Input.GetTouch(i);
-
-                var screenMiddleX = Screen.width / 2;
-                if (touch.position.x < screenMiddleX && movingHorizontal <= 0f)
-                {
-                    movingHorizontal = -1f;
-                }
-                else if (touch.position.x > screenMiddleX && movingHorizontal >= 0f)
-                {
-                    movingHorizontal = 1f;
-                }
-
-                if (touch.phase == TouchPhase.Began)
-                {
-                    startTouch = touch;
-                }
-                else if (touch.phase == TouchPhase.Ended)
-                {
-                    endTouch = touch;
-
-                    // if swipe up
-                    if (endTouch.position.y > startTouch.position.y + Screen.height / 16)
-                    {
-                        isJumping = true;
-                    }
-                }
-            }
-        }
-        else
-        {
-            // controls for not mobile devices
-            // moving
-            movingHorizontal = Input.GetAxis("Horizontal");
-
-            // jumping
-            isJumping = Input.GetButtonDown("Jump");
-        }
-
-        if (movingHorizontal > 0) {
+        if (inputController.movingHorizontal > 0) {
             if (!isHittingRight) {
                 movingDirections.Add("right");
             }
             animator.SetInteger("AnimState", 1);
 
-        } else if (movingHorizontal < 0) {
+        } else if (inputController.movingHorizontal < 0) {
             if (!isHittingLeft){
                 movingDirections.Add("left");
             }
@@ -130,12 +86,12 @@ public class MolePlayer : Humanoid {
         }
 
         // jumping
-        if (isJumping && isGrounded) {
+        if (inputController.isJumping && isGrounded) {
             movingDirections.Add("up");
         }
 
         // digging
-        if (Input.GetKey("left shift")) {
+        if (inputController.isDigging) {
             Dig();
         }
 
@@ -149,21 +105,23 @@ public class MolePlayer : Humanoid {
         var grid = digableMap.GetComponentInParent<Grid>();
 
         var tilesToDestroy = new ArrayList();
+        var tilePosition = transform.position;
 
-        if (Input.GetKey("down"))
+        if (inputController.isLookingDown)
         {
             // dig down
-            var tilePosition = transform.position;
-
             tilePosition.y -= digTileHeight;
             tilesToDestroy.Add(tilePosition);
-        }
-        else
+        } else if (inputController.isLookingUp) {
+            // dig up
+            animator.SetInteger("AnimState", 3);
+
+            tilePosition.y += 2 * digTileHeight;
+            tilesToDestroy.Add(tilePosition);
+        } else
         {
             // dig to side
             animator.SetInteger("AnimState", 2);
-
-            var tilePosition = transform.position;
 
             if (!spriteRenderer.flipX)
             {
