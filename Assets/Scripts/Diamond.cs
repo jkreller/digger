@@ -9,6 +9,7 @@ public class Diamond : MonoBehaviour {
     double randomNumber;
     public int jumpscale;
     public int slower;
+    public int value;
 
 
 	// Use this for initialization

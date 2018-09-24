@@ -189,8 +189,8 @@ public class MolePlayer : Humanoid {
         Debug.Log(other.gameObject.name);
 
         if (other.gameObject.CompareTag("coin")) {
+            gameLogic.addDiamonds(other.gameObject.GetComponent<Diamond>().value);
             Destroy(other.gameObject);
-            gameLogic.addDiamonds(1);
         }
 
         if (other.gameObject.name == "LevelEnd") {
