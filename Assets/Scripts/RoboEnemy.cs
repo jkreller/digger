@@ -11,7 +11,9 @@ public class RoboEnemy : Humanoid {
     public bool moveIfyouSee;
     private bool move = false;
 
-
+    /*
+     * Use this for initialization
+     */
     protected override void Start()
     {
         base.Start();
@@ -29,42 +31,40 @@ public class RoboEnemy : Humanoid {
         move = true;
     }
 
-    // Update is called once per frame
+    /*
+     * Update is called once per frame
+     */
     protected override void Update()
     {
         base.Update();
 
+        if (!hittingPlayer)
+        {
 
-            if (!hittingPlayer)
+        if (timerBeforeMove >= 0)
             {
-
-                if (timerBeforeMove >= 0)
+                timerBeforeMove -= Time.deltaTime;
+            }
+            else
+            {
+            if (move)
+            {
+                // moving sidewards and change direction when hit collider
+                if (isHittingSide > 0)
                 {
-                    timerBeforeMove -= Time.deltaTime;
+                    Move("right");
                 }
-                else
+                else if (isHittingSide < 0)
                 {
-                if (move)
-                {
-                    // moving sidewards and change direction when hit collider
-                    if (isHittingSide > 0)
-                    {
-                        Move("right");
-                    }
-                    else if (isHittingSide < 0)
-                    {
-                        Move("left");
-                    }
+                    Move("left");
                 }
             }
+        }
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-
-       
-
             if (collision.collider.CompareTag("Player"))
             {
                 hittingPlayer = true;

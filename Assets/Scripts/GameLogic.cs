@@ -13,10 +13,12 @@ public class GameLogic : MonoBehaviour {
     private float fadeCount;
     private bool finishedFading;
 
-    // Use this for initialization
+    /*
+     * Use this for initialization
+     */
     void Start()
     {
-        GameObject countObject = GameObject.Find("diamondCount");
+        GameObject countObject = GameObject.Find("DiamondCount");
         if (countObject) {
             diamondCount = countObject.GetComponent<Text>();
         }
@@ -28,10 +30,15 @@ public class GameLogic : MonoBehaviour {
         StartCoroutine(Fade("Out", false));
     }
 
-    // Update is called once per frame
+    /*
+     * Update is called once per frame
+     */
     void Update()
     {
-        updateDiamondText();
+        if (diamondCount)
+        {
+            updateDiamondText();
+        }
     }
 
     /*
@@ -53,9 +60,7 @@ public class GameLogic : MonoBehaviour {
      * Updates diamond count text in view
      */
     private void updateDiamondText() {
-        if (diamondCount) {
-            diamondCount.text = diamonds.ToString();
-        }
+        diamondCount.text = diamonds.ToString();
     }
 
     /*
