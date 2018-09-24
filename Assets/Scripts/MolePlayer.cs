@@ -188,8 +188,8 @@ public class MolePlayer : Humanoid {
 
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("coin")) {
+            gameLogic.addDiamonds(other.gameObject.GetComponent<Diamond>().value);
             Destroy(other.gameObject);
-            gameLogic.addDiamonds(1);
         }
 
         if (other.gameObject.name == "LevelEnd") {

@@ -95,6 +95,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpscale: 0
   slower: 0
+  value: 2
 --- !u!60 &1946234009158405277
 PolygonCollider2D:
   m_ObjectHideFlags: 0
