@@ -5,34 +5,100 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameLogic : MonoBehaviour {
+    public RawImage fadeImage;
+    public float fadingSpeed = 0.5f;
+
     private Text diamondCount;
     private int diamonds;
+    private float fadeCount;
+    private bool finishedFading;
 
+    // Use this for initialization
     void Start()
     {
         GameObject countObject = GameObject.Find("diamondCount");
-        diamondCount = countObject.GetComponent<Text>();
+        if (countObject) {
+            diamondCount = countObject.GetComponent<Text>();
+        }
 
         updateDiamondText();
+
+        fadeCount = fadeImage.color.a;
+
+        StartCoroutine(Fade("Out", false));
     }
 
+    // Update is called once per frame
     void Update()
     {
         updateDiamondText();
     }
 
+    /*
+     * Add diamonds to count
+     */
     public void addDiamonds(int count){
         diamonds += count;
     }
 
+    /*
+     * Switches to next scene with fading
+     */
     public void nextScene() {
-        int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(actualSceneIndex + 1);
+        StartCoroutine(Fade("In"));
+        StartCoroutine(coroutineNextScene());
     }
 
+    /*
+     * Updates diamond count text in view
+     */
     private void updateDiamondText() {
         if (diamondCount) {
             diamondCount.text = diamonds.ToString();
         }
+    }
+
+    /*
+     * Coroutine for fading black in or out
+     * 
+     * Fading depends on alpha channel of fadingImage
+     */
+    private IEnumerator Fade(string direction, bool actionAfter = true) {
+        var speed = Time.deltaTime / fadingSpeed;
+
+        switch (direction) {
+            case "In":
+                while (fadeCount < 1f)
+                {
+                    fadeCount += speed;
+                    fadeImage.color = new Color(0, 0, 0, fadeCount);
+                    yield return new WaitForSeconds(Time.deltaTime);
+                }
+                break;
+            case "Out":
+                while (fadeCount > 0f)
+                {
+                    fadeCount -= speed;
+                    fadeImage.color = new Color(0, 0, 0, fadeCount);
+                    yield return new WaitForSeconds(Time.deltaTime);
+                }
+                break;
+        }
+
+        if (actionAfter) {
+            finishedFading = true;
+        }
+    }
+
+    /*
+     * Coroutine for switching to next scene, i.e. after fading 
+     */
+    private IEnumerator coroutineNextScene() {
+        while (!finishedFading)
+            yield return new WaitForSeconds(0.1f);
+
+        int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(actualSceneIndex + 1);
+        finishedFading = false;
     }
 }
