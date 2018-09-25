@@ -19,7 +19,6 @@ public class MolePlayer : Humanoid {
     private Transform checkerLeftLower;
     private Transform checkerRightUpper;
     private Transform checkerRightLower;
-    private bool onMobileDevice = false;
     private Touch startTouch;
     private Touch endTouch;
     private List<string> movingDirections = new List<string>();

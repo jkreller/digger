@@ -15,6 +15,7 @@ public class InputController : MonoBehaviour
     public bool isLookingUp;
 
     private Joystick joystick;
+    private GameObject mobileControlsObject;
     private bool onMobileDevice;
 
     /*
@@ -27,6 +28,8 @@ public class InputController : MonoBehaviour
         #endif
 
         joystick = FindObjectOfType<Joystick>();
+
+        mobileControlsObject = GameObject.Find("MobileControls");
     }
 
     /*
@@ -37,9 +40,9 @@ public class InputController : MonoBehaviour
         if (!onMobileDevice) {
             // controls for not mobile devices
 
-            // disable joystick
+            // disable mobile controls
             joystick.enabled = false;
-            joystick.gameObject.SetActive(false);
+            mobileControlsObject.SetActive(false);
 
             // moving
             movingHorizontal = Input.GetAxis("Horizontal");
