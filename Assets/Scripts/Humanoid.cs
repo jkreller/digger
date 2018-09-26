@@ -35,6 +35,8 @@ public class Humanoid : MonoBehaviour {
 
     protected void Move(List<string> directions) {
         // force which is going to be applied
+
+
         var force = Vector2.zero; 
 
         // check to which site object should be moved
@@ -54,14 +56,12 @@ public class Humanoid : MonoBehaviour {
                 case "down":
                     force.y = -upwardsSpeed;
                     break;
-                case "enemieJump":
-                    force.y = upwardsSpeed/2;
-                    break;
             }
         }
 
         // apply force
         body2D.AddForce(force, ForceMode2D.Impulse);
+
     }
 
     protected void Move(string direction) {

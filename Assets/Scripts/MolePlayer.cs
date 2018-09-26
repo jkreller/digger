@@ -160,8 +160,4 @@ public class MolePlayer : Humanoid {
             gameLogic.nextScene();
         }
     }
-
-    public void enemieJump() {
-        Move("enemieJump");
-    }
 }
