@@ -28,10 +28,6 @@ public class MolePlayer : Humanoid {
     protected override void Start () {
         base.Start();
 
-        #if (UNITY_IOS || UNITY_ANDROID) && !UNITY_EDITOR
-            onMobileDevice = true;
-        #endif
-
         worldLayer = LayerMask.GetMask("World");
 
         checkerBelowLeft = GameObject.Find("CheckerBelowLeft").transform;
@@ -159,5 +155,9 @@ public class MolePlayer : Humanoid {
             hasFinished = true;
             gameLogic.nextScene();
         }
+    }
+
+    public void enemieJump() {
+        Move("enemieJump");
     }
 }
