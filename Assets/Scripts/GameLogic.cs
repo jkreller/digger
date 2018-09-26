@@ -9,7 +9,7 @@ public class GameLogic : MonoBehaviour {
     public float fadingSpeed = 0.5f;
 
     private Text diamondCount;
-    private int diamonds;
+    public int diamonds;
     private float fadeCount;
     private bool finishedFading;
 
