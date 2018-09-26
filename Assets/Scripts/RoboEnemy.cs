@@ -12,7 +12,7 @@ public class RoboEnemy : Humanoid {
     private bool move = false;
 
     /*
-     * Use this for initialization
+     * set variables and direction of enemie
      */
     protected override void Start()
     {
@@ -25,7 +25,9 @@ public class RoboEnemy : Humanoid {
             isHittingSide = -1;
         }
     }
-
+    /*
+     * if the camera sees the enemie it starts to move
+     */
     void OnBecameVisible()
     {
         move = true;
@@ -40,7 +42,7 @@ public class RoboEnemy : Humanoid {
 
         if (!hittingPlayer)
         {
-
+            // timer before start moving
         if (timerBeforeMove >= 0)
             {
                 timerBeforeMove -= Time.deltaTime;
@@ -62,7 +64,9 @@ public class RoboEnemy : Humanoid {
         }
         }
     }
-
+    /*
+     * on collision with player object
+     */
     void OnCollisionEnter2D(Collision2D collision)
     {
             if (collision.collider.CompareTag("Player"))

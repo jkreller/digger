@@ -11,13 +11,18 @@ public class Diamond : MonoBehaviour {
     public int value;
 
 
-	// Use this for initialization
+    /*
+     * set random number for movement
+     */
 	void Start () {
         Random.seed = (int)System.DateTime.Now.Ticks;
         actualPosition = this.transform.position;
         randomNumber = Random.Range(0, 10000);
 	}
 	
+    /*
+     * Move the diamond from top to bottom and back
+     */
     void Update()
     {
         if (randomNumber >= 0)
