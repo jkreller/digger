@@ -56,9 +56,6 @@ public class Humanoid : MonoBehaviour {
                 case "down":
                     force.y = -upwardsSpeed;
                     break;
-                case "enemieJump":
-                    force.y = upwardsSpeed/2;
-                    break;
             }
         }
 

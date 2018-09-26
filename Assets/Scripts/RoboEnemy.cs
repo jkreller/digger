@@ -5,6 +5,7 @@ using UnityEngine;
 public class RoboEnemy : Humanoid {
     public float timerBeforeMove;
     public bool moveIfYouSee = true;
+    public float moleJumpScale = 300f;
 
     protected bool playerIsHittingTop;
     protected bool hittingPlayer;
@@ -74,10 +75,11 @@ public class RoboEnemy : Humanoid {
 
                 foreach (ContactPoint2D hit in collision.contacts)
                 {
-                    // check if player hits top or side
+                    // check if player hits top or side and jump
                     if (hit.normal.y < 0)
                     {
-                        molePlayer.enemieJump();
+                        molePlayer.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                        molePlayer.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * moleJumpScale, ForceMode2D.Impulse);
                         Destroy(gameObject);
                     }
                     else

@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,6 +13,6 @@ MonoBehaviour:
   m_Name: DiamondBrush
   m_EditorClassIdentifier: 
   m_Prefabs:
-  - {fileID: 1354904605197492, guid: f46daeb24837b4f6a9605172d1ce874b, type: 2}
+  - {fileID: 1103556365704890, guid: 17bac14359270462ca085e31a7e38321, type: 3}
   m_PerlinScale: 0.001
   m_Z: 0
