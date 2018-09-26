@@ -9,7 +9,7 @@ public class GameLogic : MonoBehaviour {
     public float fadingSpeed = 0.5f;
 
     private Text diamondCount;
-    public int diamonds;
+    private int diamonds;
     private float fadeCount;
     private bool finishedFading;
 
@@ -26,6 +26,7 @@ public class GameLogic : MonoBehaviour {
         updateDiamondText();
 
         fadeCount = fadeImage.color.a;
+        fadeImage.gameObject.SetActive(false);
 
         StartCoroutine(Fade("Out", false));
     }
@@ -71,6 +72,8 @@ public class GameLogic : MonoBehaviour {
     private IEnumerator Fade(string direction, bool actionAfter = true) {
         var speed = Time.deltaTime / fadingSpeed;
 
+        fadeImage.gameObject.SetActive(true);
+
         switch (direction) {
             case "In":
                 while (fadeCount < 1f)
@@ -102,6 +105,7 @@ public class GameLogic : MonoBehaviour {
         while (!finishedFading)
             yield return new WaitForSeconds(0.1f);
 
+        fadeImage.gameObject.SetActive(false);
         int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(actualSceneIndex + 1);
         finishedFading = false;

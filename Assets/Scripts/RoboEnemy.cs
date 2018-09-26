@@ -3,16 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class RoboEnemy : Humanoid {
-    public float isHittingSide = 1;
-    protected bool playerIsHittingTop = false;
-    protected bool hittingPlayer = false;
-    protected MolePlayer molePlayer;
     public float timerBeforeMove;
-    public bool moveIfyouSee;
-    private bool move = false;
+    public bool moveIfYouSee = true;
+
+    protected bool playerIsHittingTop;
+    protected bool hittingPlayer;
+    protected MolePlayer molePlayer;
+    protected float isHittingSide = 1;
+
+    private bool move;
 
     /*
-     * set variables and direction of enemie
+     * Set variables and direction of enemie
      */
     protected override void Start()
     {
@@ -26,7 +28,7 @@ public class RoboEnemy : Humanoid {
         }
     }
     /*
-     * if the camera sees the enemie it starts to move
+     * If the camera sees the enemie it starts to move
      */
     void OnBecameVisible()
     {
@@ -43,13 +45,11 @@ public class RoboEnemy : Humanoid {
         if (!hittingPlayer)
         {
             // timer before start moving
-        if (timerBeforeMove >= 0)
+            if (timerBeforeMove >= 0)
             {
                 timerBeforeMove -= Time.deltaTime;
             }
-            else
-            {
-            if (move)
+            else if (move)
             {
                 // moving sidewards and change direction when hit collider
                 if (isHittingSide > 0)
@@ -61,7 +61,6 @@ public class RoboEnemy : Humanoid {
                     Move("left");
                 }
             }
-        }
         }
     }
     /*
@@ -78,8 +77,7 @@ public class RoboEnemy : Humanoid {
                     // check if player hits top or side
                     if (hit.normal.y < 0)
                     {
-                        molePlayer.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
-                        molePlayer.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 300, ForceMode2D.Impulse);
+                        molePlayer.enemieJump();
                         Destroy(gameObject);
                     }
                     else
