@@ -155,7 +155,7 @@ public class MolePlayer : Humanoid {
             tilesToDestroy.Add(tilePosition);
 
             // open chest if on side of mole
-            if (isHittingChest && isHittingLeft || isHittingRight)
+            if (isHittingChest && (isHittingLeft || isHittingRight) && chestClass)
             {
                 chestClass.TryOpenChest();
             }
