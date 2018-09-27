@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.Tilemaps;
 
 public class MolePlayer : Humanoid {
-    public Tilemap digableMap;
     public float checkerRadius = 5;
 
+    private Tilemap digableMap;
     private GameLogic gameLogic;
     private InputController inputController;
     private bool isGrounded = false;
@@ -19,14 +19,25 @@ public class MolePlayer : Humanoid {
     private Transform checkerLeftLower;
     private Transform checkerRightUpper;
     private Transform checkerRightLower;
-    private Touch startTouch;
-    private Touch endTouch;
     private List<string> movingDirections = new List<string>();
     private bool hasFinished;
+    private GameObject chest;
+    private Chest chestClass;
+    private bool isHittingChest;
 
     // Use this for initialization
     protected override void Start () {
         base.Start();
+
+        var digableGameObject = GameObject.Find("Digable");
+        if (digableGameObject) {
+            digableMap = digableGameObject.GetComponent<Tilemap>();
+        }
+
+        chest = GameObject.Find("Chest");
+        if (chest) {
+            chestClass = chest.GetComponent<Chest>();
+        }
 
         worldLayer = LayerMask.GetMask("World");
 
@@ -86,8 +97,11 @@ public class MolePlayer : Humanoid {
         }
 
         // digging
-        if (inputController.isDigging) {
+        if (inputController.isDigging)
+        {
             Dig();
+        } else if (chestClass && chestClass.isShaking) {
+            chestClass.isShaking = false;
         }
 
         // move player
@@ -97,7 +111,11 @@ public class MolePlayer : Humanoid {
     protected void Dig() {
         var digTileDistance = 32.0f;
         var digTileHeight = 32.0f;
-        var grid = digableMap.GetComponentInParent<Grid>();
+
+        Grid grid = null;
+        if (digableMap) {
+            grid = digableMap.GetComponentInParent<Grid>();
+        }
 
         var tilesToDestroy = new ArrayList();
         var tilePosition = transform.position;
@@ -107,14 +125,18 @@ public class MolePlayer : Humanoid {
             // dig down
             tilePosition.y -= digTileHeight;
             tilesToDestroy.Add(tilePosition);
+
+            // open chest if under mole
+            if (isHittingChest && isGrounded && !isHittingLeft && !isHittingRight) {
+                chestClass.TryOpenChest();
+            }
         } else if (inputController.isLookingUp) {
             // dig up
             animator.SetInteger("AnimState", 3);
 
             tilePosition.y += 2 * digTileHeight;
             tilesToDestroy.Add(tilePosition);
-        } else
-        {
+        } else {
             // dig to side
             animator.SetInteger("AnimState", 2);
 
@@ -131,11 +153,20 @@ public class MolePlayer : Humanoid {
 
             tilePosition.y += digTileHeight;
             tilesToDestroy.Add(tilePosition);
+
+            // open chest if on side of mole
+            if (isHittingChest && isHittingLeft || isHittingRight)
+            {
+                chestClass.TryOpenChest();
+            }
         }
 
-        foreach (Vector3 position in tilesToDestroy) {
-            var positionCell = grid.WorldToCell(position);
-            digableMap.SetTile(positionCell, null);
+        if (grid)
+        {
+            foreach (Vector3 position in tilesToDestroy) {
+                var positionCell = grid.WorldToCell(position);
+                digableMap.SetTile(positionCell, null); 
+            }
         }
     }
 
@@ -154,6 +185,14 @@ public class MolePlayer : Humanoid {
         if (other.gameObject.CompareTag("Finish")) {
             hasFinished = true;
             gameLogic.nextScene();
+        }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.name == "Chest")
+        {
+            isHittingChest = true;
         }
     }
 }

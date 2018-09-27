@@ -37,12 +37,16 @@ public class InputController : MonoBehaviour
      */
     void Update()
     {
-        if (!onMobileDevice) {
+        if (!onMobileDevice)
+        {
             // controls for not mobile devices
 
             // disable mobile controls
-            joystick.enabled = false;
-            mobileControlsObject.SetActive(false);
+            if (joystick && mobileControlsObject)
+            {
+                joystick.enabled = false;
+                mobileControlsObject.SetActive(false);
+            }
 
             // moving
             movingHorizontal = Input.GetAxis("Horizontal");
@@ -58,17 +62,21 @@ public class InputController : MonoBehaviour
 
             // looking up
             isLookingDown = Input.GetKey("down");
-        } else {
+        }
+        else
+        {
             // controls for mobile devices
 
-            // moving
-            movingHorizontal = (joystick.Vertical < 0.3 && joystick.Vertical > -0.3)  ? joystick.Horizontal : 0;
+            if (joystick) {
+                // moving
+                movingHorizontal = (joystick.Vertical < 0.3 && joystick.Vertical > -0.3) ? joystick.Horizontal : 0;
 
-            // looking up
-            isLookingUp = joystick.Vertical > 0;
+                // looking up
+                isLookingUp = joystick.Vertical > 0;
 
-            // looking up
-            isLookingDown = joystick.Vertical < 0;
+                // looking up
+                isLookingDown = joystick.Vertical < 0;
+            }
         }
     }
 }

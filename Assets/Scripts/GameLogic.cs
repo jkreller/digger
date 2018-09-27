@@ -28,7 +28,7 @@ public class GameLogic : MonoBehaviour {
         fadeCount = fadeImage.color.a;
         fadeImage.gameObject.SetActive(false);
 
-        StartCoroutine(Fade("Out", false));
+        StartCoroutine(Fade("Out"));
     }
 
     /*
@@ -58,10 +58,21 @@ public class GameLogic : MonoBehaviour {
     }
 
     /*
+     * Switches to first scene with fading
+     */
+    public void restartGame()
+    {
+        StartCoroutine(Fade("In"));
+        StartCoroutine(coroutineNextScene(true));
+    }
+
+    /*
      * Updates diamond count text in view
      */
     private void updateDiamondText() {
-        diamondCount.text = diamonds.ToString();
+        if (diamondCount) {
+            diamondCount.text = diamonds.ToString();
+        }
     }
 
     /*
@@ -95,19 +106,26 @@ public class GameLogic : MonoBehaviour {
 
         if (actionAfter) {
             finishedFading = true;
+            fadeImage.gameObject.SetActive(false);
         }
     }
 
     /*
-     * Coroutine for switching to next scene, i.e. after fading 
+     * Coroutine for switching to next scene, i.e. after fading
+     * If toStartingScene is true the first scene is loaded
      */
-    private IEnumerator coroutineNextScene() {
+    private IEnumerator coroutineNextScene(bool toStartingScene = false) {
         while (!finishedFading)
             yield return new WaitForSeconds(0.1f);
 
-        fadeImage.gameObject.SetActive(false);
-        int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(actualSceneIndex + 1);
         finishedFading = false;
+
+        int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (!toStartingScene) {
+            SceneManager.LoadScene(actualSceneIndex + 1);
+        } else {
+            SceneManager.LoadScene(0);
+        }
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 60215916337999802}
   - component: {fileID: 114980767973489574}
   - component: {fileID: 8985763402936481373}
+  - component: {fileID: 6985936365984735626}
   m_Layer: 0
   m_Name: Mole
   m_TagString: Player
@@ -161,7 +162,6 @@ MonoBehaviour:
   upwardsSpeed: 500
   startingPoint: {x: 0, y: 0}
   isStartingToRight: 1
-  digableMap: {fileID: 0}
   checkerRadius: 5
 --- !u!50 &8985763402936481373
 Rigidbody2D:
@@ -184,6 +184,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &6985936365984735626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040259457977454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117756afcfa254f04a46510c4b28344a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movingHorizontal: 0
+  isLookingDown: 0
+  isLookingUp: 0
 --- !u!1 &1271749278741230
 GameObject:
   m_ObjectHideFlags: 0
