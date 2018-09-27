@@ -1,5 +1,10 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!4 &8517246986865226244 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4664000728454870, guid: 0b038e3f590de409facb16923adae190, type: 3}
+  m_PrefabInstance: {fileID: 8512866387494495442}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4598692652659204063
 GameObject:
   m_ObjectHideFlags: 0
@@ -70,6 +75,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7443312857492531185}
   - component: {fileID: 7443312858200899936}
+  - component: {fileID: 4212958714451711913}
   m_Layer: 8
   m_Name: GridLevelEnd
   m_TagString: Untagged
@@ -108,6 +114,18 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &4212958714451711913
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7443312858200899937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b80aa07ec406447d39bb9e63643cda47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7443312858833433665
 GameObject:
   m_ObjectHideFlags: 0
@@ -7742,11 +7760,6 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!4 &8517246986865226244 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4664000728454870, guid: 0b038e3f590de409facb16923adae190, type: 3}
-  m_PrefabInstance: {fileID: 8512866387494495442}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8512866387494495442
 PrefabInstance:
   m_ObjectHideFlags: 0
