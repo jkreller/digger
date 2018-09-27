@@ -408,13 +408,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3158538998574457928, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3157292199134060016, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4459698823091663645, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088704589042643722, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418428959848083359, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}

@@ -49,7 +49,7 @@ public class InputController : MonoBehaviour
             }
 
             // moving
-            movingHorizontal = Input.GetAxis("Horizontal");
+            movingHorizontal = Input.GetAxisRaw("Horizontal");
 
             // jumping
             isJumping = Input.GetButtonDown("Jump");

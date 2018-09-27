@@ -9,7 +9,7 @@ public class Chest : MonoBehaviour
     [HideInInspector]
     public bool isOpen;
     public float secondsToOpen = 2;
-    public float secondsAfterOpening = 2;
+    public float secondsAfterOpening = 1;
 
     private Animator animator;
     private int framesShaking;

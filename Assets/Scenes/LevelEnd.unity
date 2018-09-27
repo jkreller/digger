@@ -175,6 +175,18 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3157292199134060016, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4088704589042643722, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3045564441401050506, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: fadingSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
 --- !u!1001 &818567387
@@ -1811,6 +1823,10 @@ PrefabInstance:
     - target: {fileID: 8517246986865226244, guid: 25e3e4102051f4b0fa6870601124da7f, type: 3}
       propertyPath: m_LocalPosition.y
       value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 8201414870873161239, guid: 25e3e4102051f4b0fa6870601124da7f, type: 3}
+      propertyPath: secondsAfterOpening
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25e3e4102051f4b0fa6870601124da7f, type: 3}
