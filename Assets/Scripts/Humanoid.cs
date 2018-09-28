@@ -27,7 +27,7 @@ public class Humanoid : MonoBehaviour {
     }
 
     // Update is called once per frame
-    protected virtual void Update() {
+    protected virtual void FixedUpdate() {
         // avoid sliding
         Vector2 easeVelocity = body2D.velocity;
         easeVelocity.x *= 0.7f;

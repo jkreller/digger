@@ -56,8 +56,8 @@ public class MolePlayer : Humanoid {
     }
 	
 	// Update is called once per frame
-	protected override void Update () {
-        base.Update();
+	protected override void FixedUpdate () {
+        base.FixedUpdate();
 
         // checking sides for not getting stuck
         var isHittingLeftUpper = Physics2D.OverlapCircle(checkerLeftUpper.position, checkerRadius, worldLayer);

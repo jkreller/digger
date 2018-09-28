@@ -22,11 +22,7 @@ using UnityEngine;
             
         if (Input.GetKeyDown(KeyCode.Escape))
             {
-                gameLogic.StartCoroutine(gameLogic.Fade("In"));
                 paused = togglePause();
-
-                
-
             }
         }
 
