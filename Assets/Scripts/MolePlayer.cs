@@ -79,12 +79,17 @@ public class MolePlayer : Humanoid {
         if (inputController.movingHorizontal > 0) {
             if (!isHittingRight) {
                 movingDirections.Add("right");
+            } else if (spriteRenderer.flipX)
+            {
+                spriteRenderer.flipX = false;
             }
             animator.SetInteger("AnimState", 1);
 
         } else if (inputController.movingHorizontal < 0) {
-            if (!isHittingLeft){
+            if (!isHittingLeft) {
                 movingDirections.Add("left");
+            } else if (!spriteRenderer.flipX) {
+                spriteRenderer.flipX = true;
             }
             animator.SetInteger("AnimState", 1);
         } else {
