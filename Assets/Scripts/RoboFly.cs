@@ -15,10 +15,10 @@ public class RoboFly : RoboEnemy {
         randomFlyingBorders = flyingBorders;
     }
 
-    protected override void Update() {
+    protected override void FixedUpdate() {
         // if robo should also move to left and right
         if (moveLeftAndRight) {
-            base.Update();
+            base.FixedUpdate();
         }
 
         var upperBorderHitted = false;

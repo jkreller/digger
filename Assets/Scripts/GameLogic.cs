@@ -80,7 +80,7 @@ public class GameLogic : MonoBehaviour {
      * 
      * Fading depends on alpha channel of fadingImage
      */
-    private IEnumerator Fade(string direction, bool actionAfter = true) {
+    public IEnumerator Fade(string direction, bool actionAfter = true) {
         var speed = Time.deltaTime / fadingSpeed;
 
         fadeImage.gameObject.SetActive(true);
