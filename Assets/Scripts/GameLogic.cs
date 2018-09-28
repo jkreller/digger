@@ -12,6 +12,7 @@ public class GameLogic : MonoBehaviour {
     private int diamonds;
     private float fadeCount;
     private bool finishedFading;
+    private int timesFading;
 
     /*
      * Use this for initialization
@@ -28,7 +29,7 @@ public class GameLogic : MonoBehaviour {
         fadeCount = fadeImage.color.a;
         fadeImage.gameObject.SetActive(false);
 
-        StartCoroutine(Fade("Out"));
+        StartCoroutine(Fade("Out", false));
     }
 
     /*
@@ -91,7 +92,7 @@ public class GameLogic : MonoBehaviour {
                 {
                     fadeCount += speed;
                     fadeImage.color = new Color(0, 0, 0, fadeCount);
-                    yield return new WaitForSeconds(Time.deltaTime);
+                    yield return new WaitForEndOfFrame();
                 }
                 break;
             case "Out":
@@ -99,15 +100,20 @@ public class GameLogic : MonoBehaviour {
                 {
                     fadeCount -= speed;
                     fadeImage.color = new Color(0, 0, 0, fadeCount);
-                    yield return new WaitForSeconds(Time.deltaTime);
+                    yield return new WaitForEndOfFrame();
                 }
                 break;
         }
 
-        if (actionAfter) {
-            finishedFading = true;
+        if (timesFading == 0) {
             fadeImage.gameObject.SetActive(false);
         }
+
+        if (actionAfter) {
+            finishedFading = true;
+        }
+
+        timesFading++;
     }
 
     /*
@@ -116,16 +122,23 @@ public class GameLogic : MonoBehaviour {
      */
     private IEnumerator coroutineNextScene(bool toStartingScene = false) {
         while (!finishedFading)
-            yield return new WaitForSeconds(0.1f);
+            yield return null;
 
         finishedFading = false;
-
+		
         int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
+        AsyncOperation asyncLoad;
         if (!toStartingScene) {
-            SceneManager.LoadScene(actualSceneIndex + 1);
+            asyncLoad = SceneManager.LoadSceneAsync(actualSceneIndex + 1);
         } else {
-            SceneManager.LoadScene(0);
+            asyncLoad = SceneManager.LoadSceneAsync(0);
+        }
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
         }
     }
 }

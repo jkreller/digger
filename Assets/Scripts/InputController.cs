@@ -4,6 +4,7 @@ using System.Collections;
 public class InputController : MonoBehaviour
 {
     public bool simulateMobile;
+
     [HideInInspector]
     public float movingHorizontal;
     [HideInInspector]
@@ -17,6 +18,8 @@ public class InputController : MonoBehaviour
     [HideInInspector]
     public bool pause;
 
+    private Touch startTouch;
+    private Touch endTouch;
     /*
      * Getter and setter for isJumping property
      */
@@ -100,16 +103,54 @@ public class InputController : MonoBehaviour
             {
                 // controls for mobile devices
 
-                if (joystick)
-                {
-                    // moving
-                    movingHorizontal = (joystick.Vertical < 0.3 && joystick.Vertical > -0.3) ? joystick.Horizontal : 0;
+                if (mobileControlsObject) {
+                    if (joystick)
+                    {
+                        var borderToLooking = 0.8;
+                        // moving
+                        movingHorizontal = (joystick.Vertical < borderToLooking && joystick.Vertical > -borderToLooking) ? joystick.Horizontal : 0;
 
-                    // looking up
-                    isLookingUp = joystick.Vertical > 0;
+                        // looking up
+                        isLookingUp = joystick.Vertical > borderToLooking;
 
-                    // looking up
-                    isLookingDown = joystick.Vertical < 0;
+                        // looking up
+                        isLookingDown = joystick.Vertical < -borderToLooking;
+                    }
+                } else {
+                    // controls for menu
+                    var touchOrigin = -Vector2.one;
+
+                    for (int i = 0; i < Input.touchCount; i++)
+                    {
+                        Touch touch = Input.GetTouch(i);
+
+                        var screenMiddleX = Screen.width / 2;
+                        if (touch.position.x < screenMiddleX && movingHorizontal <= 0f)
+                        {
+                            movingHorizontal = -1f;
+                        }
+                        else if (touch.position.x > screenMiddleX && movingHorizontal >= 0f)
+                        {
+                            movingHorizontal = 1f;
+                        }
+
+                        if (touch.phase == TouchPhase.Began)
+                        {
+                            startTouch = touch;
+                        }
+                        else if (touch.phase == TouchPhase.Ended)
+                        {
+                            movingHorizontal = 0;
+
+                            endTouch = touch;
+
+                            // if swipe up
+                            if (endTouch.position.y > startTouch.position.y + Screen.height / 16)
+                            {
+                                IsJumping = true;
+                            }
+                        }
+                    }
                 }
             }
         }
