@@ -3,10 +3,11 @@ using System.Collections;
 
 public class InputController : MonoBehaviour
 {
+    public bool simulateMobile;
     [HideInInspector]
     public float movingHorizontal;
     [HideInInspector]
-    public bool isJumping { get; set; }
+    public bool isJumping;
     [HideInInspector]
     public bool isDigging { get; set; }
     [HideInInspector]
@@ -15,30 +16,57 @@ public class InputController : MonoBehaviour
     public bool isLookingUp;
     [HideInInspector]
     public bool pause;
+
+    /*
+     * Getter and setter for isJumping property
+     */
+    public bool IsJumping {
+        get { return isJumping; }
+        set
+        {
+            if (value)
+            {
+                StartCoroutine(SetJumpingFalse());
+            }
+            isJumping = value;
+        }
+    }
+
     private Joystick joystick;
     private GameObject mobileControlsObject;
     private bool onMobileDevice;
 
+    /*
+     * Coroutine for set jumping false 
+     */
+    public IEnumerator SetJumpingFalse()
+    {
+        yield return new WaitForFixedUpdate();
+        isJumping = false;
+    }
 
     /*
      * Use this for initialization
      */
     private void Start()
     {
-#if (UNITY_IOS || UNITY_ANDROID) && !UNITY_EDITOR
+        #if (UNITY_IOS || UNITY_ANDROID) && !UNITY_EDITOR
             onMobileDevice = true;
-#endif
+        #else
+            if (simulateMobile) {
+                onMobileDevice = true;
+            }
+        #endif
 
         joystick = FindObjectOfType<Joystick>();
 
         mobileControlsObject = GameObject.Find("MobileControls");
-
     }
 
     /*
      * Update is called once per frame
      */
-    void Update()
+    private void Update()
     {
         if (!pause)
         {

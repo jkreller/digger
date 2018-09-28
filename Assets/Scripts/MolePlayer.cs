@@ -166,11 +166,12 @@ public class MolePlayer : Humanoid {
             }
         }
 
+        // destroy selected tiles
         if (grid)
         {
             foreach (Vector3 position in tilesToDestroy) {
                 var positionCell = grid.WorldToCell(position);
-                digableMap.SetTile(positionCell, null); 
+                digableMap.SetTile(positionCell, null);
             }
         }
     }
