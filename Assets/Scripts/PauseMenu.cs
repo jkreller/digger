@@ -3,47 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 
     public class PauseMenu : MonoBehaviour
+{
+    private GameLogic gameLogic;
+    private InputController inputController;
+    private Canvas pauseMenu;
+
+    private void Start()
     {
-        bool paused = false;
-        private GameLogic gameLogic;
-        private InputController inputController;
-        private Canvas menu;
+        gameLogic = this.gameObject.GetComponent<GameLogic>();
+        inputController = this.gameObject.GetComponent<InputController>();
+        pauseMenu = GameObject.Find("PauseMenu").GetComponent<Canvas>();
+    }
 
-        private void Start()
-	    {
-            gameLogic = this.gameObject.GetComponent<GameLogic>();
-            inputController = this.gameObject.GetComponent<InputController>();
-            menu = GameObject.Find("PauseMenu").GetComponent<Canvas>();
-	    }
-	    
-        void Update() {
-            if (Input.GetKeyDown(KeyCode.Escape)) {
-                paused = togglePause();
-            }
-        }
-
-        void OnGUI()
+    void Update()
+    {
+        if (inputController.pause)
         {
-            if (paused)
-            {
-                
-            }
-        }
-
-        bool togglePause()
-        {
-            if (Time.timeScale == 0f) {
-                inputController.pause = false;
-                Time.timeScale = 1f;
-                menu.enabled = false;
-                return (false);
-            } else
-            {
-                inputController.pause = true;
-                Time.timeScale = 0f;
-                menu.enabled = true;
-                return (true);
-            }
+            TogglePause();
         }
     }
 
+    void TogglePause()
+    {
+        if (Time.timeScale == 0f)
+        {
+            Time.timeScale = 1f;
+            pauseMenu.enabled = false;
+        }
+        else
+        {
+            Time.timeScale = 0f;
+            pauseMenu.enabled = true;
+        }
+    }
+}

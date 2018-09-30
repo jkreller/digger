@@ -6,24 +6,28 @@ public class InputController : MonoBehaviour
     public bool simulateMobile;
 
     [HideInInspector]
-    public float movingHorizontal;
+    public float movingHorizontal { get; set; }
     [HideInInspector]
     public bool isJumping;
     [HideInInspector]
     public bool isDigging { get; set; }
     [HideInInspector]
-    public bool isLookingDown;
+    public bool isLookingDown { get; set; }
     [HideInInspector]
-    public bool isLookingUp;
+    public bool isLookingUp { get; set; }
     [HideInInspector]
     public bool pause;
 
     private Touch startTouch;
     private Touch endTouch;
+    private GameObject mobileControlsObject;
+    private bool onMobileDevice;
+
     /*
      * Getter and setter for isJumping property
      */
-    public bool IsJumping {
+    public bool IsJumping
+    {
         get { return isJumping; }
         set
         {
@@ -35,9 +39,21 @@ public class InputController : MonoBehaviour
         }
     }
 
-    private Joystick joystick;
-    private GameObject mobileControlsObject;
-    private bool onMobileDevice;
+    /*
+     * Getter and setter for pause property
+     */
+    public bool Pause
+    {
+        get { return pause; }
+        set
+        {
+            if (value)
+            {
+                StartCoroutine(SetPauseFalse());
+            }
+            pause = value;
+        }
+    }
 
     /*
      * Coroutine for set jumping false 
@@ -46,6 +62,15 @@ public class InputController : MonoBehaviour
     {
         yield return new WaitForFixedUpdate();
         isJumping = false;
+    }
+
+    /*
+     * Coroutine for set pause false
+     */
+    public IEnumerator SetPauseFalse()
+    {
+        yield return new WaitForEndOfFrame();
+        pause = false;
     }
 
     /*
@@ -61,8 +86,6 @@ public class InputController : MonoBehaviour
             }
         #endif
 
-        joystick = FindObjectOfType<Joystick>();
-
         mobileControlsObject = GameObject.Find("MobileControls");
     }
 
@@ -71,84 +94,71 @@ public class InputController : MonoBehaviour
      */
     private void Update()
     {
-        if (!pause)
+        if (!onMobileDevice)
         {
-            if (!onMobileDevice)
+            // controls for not mobile devices
+
+            // disable mobile controls
+            if (mobileControlsObject)
             {
-                // controls for not mobile devices
-
-                // disable mobile controls
-                if (joystick && mobileControlsObject)
-                {
-                    joystick.enabled = false;
-                    mobileControlsObject.SetActive(false);
-                }
-
-                // moving
-                movingHorizontal = Input.GetAxisRaw("Horizontal");
-
-                // jumping
-                isJumping = Input.GetButtonDown("Jump");
-
-                // digging
-                isDigging = Input.GetKey("left shift");
-
-                // looking up
-                isLookingUp = Input.GetKey("up");
-
-                // looking up
-                isLookingDown = Input.GetKey("down");
+                mobileControlsObject.SetActive(false);
             }
-            else
+
+            // moving
+            movingHorizontal = Input.GetAxisRaw("Horizontal");
+
+            // jumping
+            isJumping = Input.GetButtonDown("Jump");
+
+            // digging
+            isDigging = Input.GetKey("left shift");
+
+            // looking up
+            isLookingUp = Input.GetKey("up");
+
+            // looking up
+            isLookingDown = Input.GetKey("down");
+
+            // pause game
+            pause = Input.GetKeyDown(KeyCode.Escape);
+        }
+        else
+        {
+            // controls for mobile devices
+
+            if (!mobileControlsObject)
             {
-                // controls for mobile devices
+                // controls for menu
+                var touchOrigin = -Vector2.one;
 
-                if (mobileControlsObject) {
-                    if (joystick)
+                for (int i = 0; i < Input.touchCount; i++)
+                {
+                    Touch touch = Input.GetTouch(i);
+
+                    var screenMiddleX = Screen.width / 2;
+                    if (touch.position.x < screenMiddleX && movingHorizontal <= 0f)
                     {
-                        var borderToLooking = 0.8;
-                        // moving
-                        movingHorizontal = (joystick.Vertical < borderToLooking && joystick.Vertical > -borderToLooking) ? joystick.Horizontal : 0;
-
-                        // looking up
-                        isLookingUp = joystick.Vertical > borderToLooking;
-
-                        // looking up
-                        isLookingDown = joystick.Vertical < -borderToLooking;
+                        movingHorizontal = -1f;
                     }
-                } else {
-                    // controls for menu
-                    var touchOrigin = -Vector2.one;
-
-                    for (int i = 0; i < Input.touchCount; i++)
+                    else if (touch.position.x > screenMiddleX && movingHorizontal >= 0f)
                     {
-                        Touch touch = Input.GetTouch(i);
+                        movingHorizontal = 1f;
+                    }
 
-                        var screenMiddleX = Screen.width / 2;
-                        if (touch.position.x < screenMiddleX && movingHorizontal <= 0f)
-                        {
-                            movingHorizontal = -1f;
-                        }
-                        else if (touch.position.x > screenMiddleX && movingHorizontal >= 0f)
-                        {
-                            movingHorizontal = 1f;
-                        }
+                    if (touch.phase == TouchPhase.Began)
+                    {
+                        startTouch = touch;
+                    }
+                    else if (touch.phase == TouchPhase.Ended)
+                    {
+                        movingHorizontal = 0;
 
-                        if (touch.phase == TouchPhase.Began)
-                        {
-                            startTouch = touch;
-                        }
-                        else if (touch.phase == TouchPhase.Ended)
-                        {
-                            movingHorizontal = 0;
+                        endTouch = touch;
 
-                            endTouch = touch;
-
-                            // if swipe up
-                            if (endTouch.position.y > startTouch.position.y + Screen.height / 16)
-                            {
-                                IsJumping = true;
-                            }
+                        // if swipe up
+                        if (endTouch.position.y > startTouch.position.y + Screen.height / 16)
+                        {
+                            IsJumping = true;
                         }
                     }
                 }
