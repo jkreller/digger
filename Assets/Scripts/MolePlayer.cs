@@ -25,7 +25,9 @@ public class MolePlayer : Humanoid {
     private Chest chestClass;
     private bool isHittingChest;
 
-    // Use this for initialization
+    /*
+     * initializing Moleplayer and all of the needed classes
+     */
     protected override void Start () {
         base.Start();
 
@@ -55,7 +57,9 @@ public class MolePlayer : Humanoid {
         }
     }
 	
-	// Update is called once per frame
+    /*
+     * overwriting the update of the humanoidclass
+     */
 	protected override void FixedUpdate () {
         base.FixedUpdate();
 
@@ -180,7 +184,9 @@ public class MolePlayer : Humanoid {
             }
         }
     }
-
+    /*
+     * check collision triggerobjects (for collect coins, and finish the level)
+     */
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("coin")) {
             gameLogic.addDiamonds(other.gameObject.GetComponent<Diamond>().value);
@@ -198,7 +204,9 @@ public class MolePlayer : Humanoid {
             gameLogic.nextScene();
         }
     }
-
+    /*
+     * collisison with chestobject
+     */
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.name == "Chest")

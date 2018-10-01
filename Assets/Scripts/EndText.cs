@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class EndText : MonoBehaviour
 {
+    /*
+     * class for endscreen
+     */    
     private GameLogic gameLogic;
-
-    // Start is called before the first frame update
     void Start()
     {
         gameLogic = GameObject.Find("GameLogic").GetComponent<GameLogic>();

@@ -6,12 +6,16 @@ public class JumpField : MonoBehaviour
 {
     protected MolePlayer molePlayer;
 
-    // Start is called before the first frame update
+    /*
+     * get player object
+     */
     void Start()
     {
         molePlayer = FindObjectOfType<MolePlayer>();
     }
-
+    /*
+     * let player jump on collision
+     */
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.CompareTag("Player"))

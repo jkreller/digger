@@ -100,12 +100,4 @@ public class RoboEnemy : Humanoid {
             }
         }
     }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag("Player"))
-        {
-            hittingPlayer = false;
-        }
-    }
 }

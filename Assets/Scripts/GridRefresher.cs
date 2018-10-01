@@ -5,7 +5,9 @@ using UnityEngine.Tilemaps;
 
 public class GridRefresher : MonoBehaviour
 {
-    // Start is called before the first frame update
+    /*
+     * refreshing tiles before startup
+     */
     void Start()
     {
         var tilemaps = FindObjectsOfType<Tilemap>();
@@ -14,10 +16,4 @@ public class GridRefresher : MonoBehaviour
             tilemap.RefreshAllTiles();
         }
     }
-
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    
-    //}
 }

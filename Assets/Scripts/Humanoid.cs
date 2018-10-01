@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Humanoid : MonoBehaviour {
+public abstract class Humanoid : MonoBehaviour {
     public float speed = 80;
     public float upwardsSpeed = 500;
     public Vector2 startingPoint = Vector2.zero;
@@ -13,7 +13,9 @@ public class Humanoid : MonoBehaviour {
     protected SpriteRenderer spriteRenderer;
     protected Animator animator;
 
-    // Use this for initialization
+    /*
+     * initializing abstract humanoid
+     */
     protected virtual void Start() {
         body2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -26,7 +28,9 @@ public class Humanoid : MonoBehaviour {
         startingPoint = transform.position;
     }
 
-    // Update is called once per frame
+    /*
+     * checking if player is grounded
+     */
     protected virtual void FixedUpdate() {
         // avoid sliding
         Vector2 easeVelocity = body2D.velocity;
@@ -34,7 +38,9 @@ public class Humanoid : MonoBehaviour {
 
         body2D.velocity = easeVelocity;
     }
-
+    /*
+     * moving humanoid
+     */
     protected void Move(List<string> directions) {
         // force which is going to be applied
         var force = Vector2.zero; 
@@ -62,11 +68,15 @@ public class Humanoid : MonoBehaviour {
         // apply force
         body2D.AddForce(force, ForceMode2D.Impulse);
     }
-
+    /*
+     * start move with string of direction
+     */
     protected void Move(string direction) {
         Move(new List<string>() { direction });
     }
-
+    /*
+     * respawn humanoid
+     */
     public void Respawn() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
