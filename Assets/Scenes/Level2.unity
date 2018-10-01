@@ -386,6 +386,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameLogic
       objectReference: {fileID: 0}
+    - target: {fileID: 6587955715603997435, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587955715086096144, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.395501
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587955715086096144, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4.395501
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587955715086096144, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.465167
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587955715086096144, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -185
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587955715086096144, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -303
+      objectReference: {fileID: 0}
+    - target: {fileID: 6587955715603997434, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
 --- !u!1 &1678391573
