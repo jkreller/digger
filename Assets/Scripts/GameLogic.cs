@@ -58,6 +58,11 @@ public class GameLogic : MonoBehaviour {
         StartCoroutine(coroutineNextScene());
     }
 
+    public void chooseScene(int sceneIndex) {
+        StartCoroutine(Fade("In"));
+        StartCoroutine(coroutineNextScene());
+    }
+
     /*
      * Switches to first scene with fading
      */
@@ -120,7 +125,7 @@ public class GameLogic : MonoBehaviour {
      * Coroutine for switching to next scene, i.e. after fading
      * If toStartingScene is true the first scene is loaded
      */
-    private IEnumerator coroutineNextScene(bool toStartingScene = false) {
+    private IEnumerator coroutineNextScene(bool toStartingScene = false, int sceneIndex = -1) {
         while (!finishedFading)
             yield return null;
 
