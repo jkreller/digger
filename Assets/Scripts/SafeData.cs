@@ -5,14 +5,10 @@ using UnityEngine;
 public class SafeData
 {
     public static SafeData current;
-    public LevelData level1;
-    public LevelData level2;
+    public List<LevelData> levels;
+    public int diamonds;
 
-
-    public SafeData()
-        {
-            level1 = new LevelData();
-            level2 = new LevelData();
-           
-        }
+    public SafeData(){
+        
+    }
 }
