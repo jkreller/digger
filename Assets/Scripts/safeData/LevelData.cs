@@ -5,6 +5,7 @@ using UnityEngine;
 public class LevelData
 {
     public static LevelData current;
+    public int id;
     public int blueTotal;
     public int blue;
     public bool green;
