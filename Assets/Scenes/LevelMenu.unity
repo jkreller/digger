@@ -435,22 +435,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelData:
   - id: 0
-    blueTotal: 33
-    blue: 33
-    green: 0
-    red: 0
-    yellow: 0
-    black: 0
-    gold: 0
+    blueTotal: 22
+    blue: 22
+    diamondShow: 0000000000
     finished: 0
   - id: 1
-    blueTotal: 33
-    blue: 33
-    green: 0
-    red: 0
-    yellow: 0
-    black: 0
-    gold: 0
+    blueTotal: 11
+    blue: 11
+    diamondShow: 0101010101
     finished: 0
 --- !u!1001 &1083252305
 PrefabInstance:
@@ -867,14 +859,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8553243642302563904, guid: 06adca7ae9d9647989abab108f08d85b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8552764726125698631, guid: 06adca7ae9d9647989abab108f08d85b, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8553919254694047576, guid: 06adca7ae9d9647989abab108f08d85b, type: 3}
       propertyPath: m_Name
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8553327936319099358, guid: 06adca7ae9d9647989abab108f08d85b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378810481095369904, guid: 06adca7ae9d9647989abab108f08d85b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8378600988897809125, guid: 06adca7ae9d9647989abab108f08d85b, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -8,11 +8,7 @@ public class LevelData
     public int id;
     public int blueTotal;
     public int blue;
-    public bool green;
-    public bool red;
-    public bool yellow;
-    public bool black;
-    public bool gold;
+    public bool[] diamondShow = new bool[5];
     public bool finished;
 
     public LevelData(){

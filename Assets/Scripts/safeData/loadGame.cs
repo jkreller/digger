@@ -27,6 +27,7 @@ public class loadGame : MonoBehaviour
     {
         Debug.Log("safe");
         BinaryFormatter bf = new BinaryFormatter();
+        File.Delete(Application.persistentDataPath + "/saveGame.gd");
         FileStream file = File.Create(Application.persistentDataPath + "/saveGame.gd");
         bf.Serialize(file, safeData);
         file.Close();
