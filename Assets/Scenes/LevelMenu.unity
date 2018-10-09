@@ -435,14 +435,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   levelData:
   - id: 0
-    blueTotal: 22
-    blue: 22
-    diamondShow: 0000000000
+    blueTotal: 30
+    blue: 0
+    diamondShow: 0101010100
     finished: 0
   - id: 1
-    blueTotal: 11
-    blue: 11
-    diamondShow: 0101010101
+    blueTotal: 40
+    blue: 40
+    diamondShow: 0101000000
     finished: 0
 --- !u!1001 &1083252305
 PrefabInstance:
