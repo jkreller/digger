@@ -544,6 +544,22 @@ PrefabInstance:
       propertyPath: levelData.Array.data[0].diamondShow.Array.data[3]
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2802050374607474767, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: levelData.Array.data[1].blueTotal
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802050374607474767, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: levelData.Array.data[1].blue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802050374607474767, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: levelData.Array.data[1].diamondShow.Array.data[0]
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2802050374607474767, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+      propertyPath: levelData.Array.data[1].diamondShow.Array.data[1]
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
 --- !u!1 &1143130085 stripped
