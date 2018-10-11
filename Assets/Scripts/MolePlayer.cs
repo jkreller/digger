@@ -189,7 +189,34 @@ public class MolePlayer : Humanoid {
      */
     void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("coin")) {
-            gameLogic.addDiamonds(other.gameObject.GetComponent<Diamond>().value);
+            Diamond diamond = other.gameObject.GetComponent<Diamond>();
+            if (diamond.blue)
+            {
+                gameLogic.addBlueDiamonds();
+            }
+            else
+            {
+                if(diamond.diamondShow == 0)
+                {
+                    loadGame.currentLevelData.diamondShow[0] = true;
+                }
+                else if(diamond.diamondShow == 1){
+                    loadGame.currentLevelData.diamondShow[1] = true;
+                }
+                else if (diamond.diamondShow == 2)
+                {
+                    loadGame.currentLevelData.diamondShow[2] = true;
+                }
+                else if (diamond.diamondShow == 3)
+                {
+                    loadGame.currentLevelData.diamondShow[3] = true;
+                }
+                else if (diamond.diamondShow == 4)
+                {
+                    loadGame.currentLevelData.diamondShow[4] = true;
+                }
+            }
+
             Destroy(other.gameObject);
         }
 
@@ -201,7 +228,10 @@ public class MolePlayer : Humanoid {
 
         if (other.gameObject.CompareTag("Finish")) {
             hasFinished = true;
-            gameLogic.nextScene();
+            //gameLogic.nextScene();
+            loadGame.saveLevel(loadGame.currentLevelData);
+            Debug.Log(loadGame.currentLevelData.blue);
+            gameLogic.chooseScene(1);
         }
     }
     /*

@@ -6,11 +6,16 @@ using System.IO;
 
 public class loadGame : MonoBehaviour
 {
+    public int id;
     public static SafeData safeData = new SafeData();
+    public static LevelData currentLevelData = null;
+
+
     void Awake()
     {
         Load();
         Debug.Log(safeData.levels.ToString());
+        getActualLevel(id);
     }
     public static void Load()
     {
@@ -43,5 +48,9 @@ public class loadGame : MonoBehaviour
             safeData.levels.Add(levelData);
         }
         Save(safeData);
+    }
+
+    public void getActualLevel(int id){
+        currentLevelData = safeData.levels.Find(x => x.id == id);
     }
 }

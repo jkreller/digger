@@ -9,6 +9,9 @@ public class Diamond : MonoBehaviour {
     public int jumpscale;
     public int slower;
     public int value;
+    public bool blue;
+    public int diamondShow;
+
 
 
     /*

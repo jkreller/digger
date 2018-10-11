@@ -7,8 +7,9 @@ using UnityEngine.SceneManagement;
 public class GameLogic : MonoBehaviour {
     public RawImage fadeImage;
     public float fadingSpeed = 0.5f;
-
-    private Text diamondCount;
+    private int blueDiamonds;
+    private int blueTotal;
+    private Text blueCount;
     private int diamonds;
     private float fadeCount;
     private bool finishedFading;
@@ -21,9 +22,9 @@ public class GameLogic : MonoBehaviour {
     {
         GameObject countObject = GameObject.Find("DiamondCount");
         if (countObject) {
-            diamondCount = countObject.GetComponent<Text>();
+            blueCount = countObject.GetComponent<Text>();
         }
-
+        blueTotal = loadGame.currentLevelData.blueTotal;
         updateDiamondText();
 
         fadeCount = fadeImage.color.a;
@@ -32,22 +33,19 @@ public class GameLogic : MonoBehaviour {
         StartCoroutine(Fade("Out", false));
     }
 
-    /*
-     * Update is called once per frame
-     */
-    void Update()
-    {
-        if (diamondCount)
-        {
-            updateDiamondText();
-        }
-    }
+ 
 
     /*
      * Add diamonds to count
      */
-    public void addDiamonds(int count){
-        diamonds += count;
+    public void addBlueDiamonds(){
+        blueDiamonds++;
+        updateDiamondText();
+        if(blueDiamonds > loadGame.currentLevelData.blue)
+        {
+            loadGame.currentLevelData.blue = blueDiamonds; 
+        }
+
     }
 
     /*
@@ -60,7 +58,7 @@ public class GameLogic : MonoBehaviour {
 
     public void chooseScene(int sceneIndex) {
         StartCoroutine(Fade("In"));
-        StartCoroutine(coroutineNextScene());
+        StartCoroutine(coroutineNextScene(sceneIndex));
     }
 
     /*
@@ -69,15 +67,15 @@ public class GameLogic : MonoBehaviour {
     public void restartGame()
     {
         StartCoroutine(Fade("In"));
-        StartCoroutine(coroutineNextScene(true));
+        StartCoroutine(coroutineNextScene(0));
     }
 
     /*
      * Updates diamond count text in view
      */
     private void updateDiamondText() {
-        if (diamondCount) {
-            diamondCount.text = diamonds.ToString();
+        if (blueCount) {
+            blueCount.text = blueDiamonds.ToString()+"/"+blueTotal.ToString();
         }
     }
 
@@ -125,20 +123,24 @@ public class GameLogic : MonoBehaviour {
      * Coroutine for switching to next scene, i.e. after fading
      * If toStartingScene is true the first scene is loaded
      */
-    private IEnumerator coroutineNextScene(bool toStartingScene = false, int sceneIndex = -1) {
+    private IEnumerator coroutineNextScene(int sceneIndex = -1) {
         while (!finishedFading)
             yield return null;
 
         finishedFading = false;
-		
-        int actualSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int actualSceneIndex;
+
+        if (sceneIndex >= 0) {
+            actualSceneIndex = sceneIndex;
+        }
+        else{
+            actualSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        }
+
+
 
         AsyncOperation asyncLoad;
-        if (!toStartingScene) {
-            asyncLoad = SceneManager.LoadSceneAsync(actualSceneIndex + 1);
-        } else {
-            asyncLoad = SceneManager.LoadSceneAsync(0);
-        }
+        asyncLoad = SceneManager.LoadSceneAsync(actualSceneIndex);
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
