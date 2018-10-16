@@ -20,11 +20,4 @@ public class DiamondShow : MonoBehaviour
             rend.enabled = false;
         }
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-        
-    }
 }

@@ -207,6 +207,30 @@ PrefabInstance:
       propertyPath: m_TileSpriteArray.Array.data[27].m_Data
       value: 
       objectReference: {fileID: 21300010, guid: c90f092d1fa9c44ff9d8a35c5233f129, type: 3}
+    - target: {fileID: 3741976177018606980, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2350
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741976177018606980, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 345.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552286745480886358, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2591
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552286745480886358, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -732
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357459532534884443, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357459532534884443, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
 --- !u!1 &484699376 stripped
