@@ -6,11 +6,14 @@ public class RoboEnemy : Humanoid {
     public float timerBeforeMove;
     public bool moveIfYouSee = true;
     public float moleJumpScale = 300f;
+    public bool shouldMove = true;
+    public bool shouldJump;
 
     protected bool playerIsHittingTop;
     protected bool hittingPlayer;
     protected MolePlayer molePlayer;
     protected float isHittingSide = 1;
+    protected bool isHittingGround;
 
     private bool move;
 
@@ -50,7 +53,7 @@ public class RoboEnemy : Humanoid {
             {
                 timerBeforeMove -= Time.deltaTime;
             }
-            else if (move)
+            else if (move && shouldMove)
             {
                 // moving sidewards and change direction when hit collider
                 if (isHittingSide > 0)
@@ -61,6 +64,11 @@ public class RoboEnemy : Humanoid {
                 {
                     Move("left");
                 }
+            }
+
+            if (move && shouldJump && isHittingGround) {
+                Move("up");
+                isHittingGround = false;
             }
         }
     }
@@ -97,6 +105,10 @@ public class RoboEnemy : Humanoid {
             if (hit.normal.x > .5f || hit.normal.x < -.5f)
             {
                 isHittingSide = hit.normal.x;
+            }
+
+            if (hit.normal.y > .5f) {
+                isHittingGround = true;
             }
         }
     }

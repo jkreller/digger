@@ -96,6 +96,8 @@ MonoBehaviour:
   jumpscale: 0
   slower: 0
   value: 25
+  blue: 0
+  diamondShow: 3
 --- !u!60 &9107545415289281014
 PolygonCollider2D:
   m_ObjectHideFlags: 0

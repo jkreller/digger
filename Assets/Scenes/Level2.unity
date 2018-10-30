@@ -207,8 +207,50 @@ PrefabInstance:
       propertyPath: m_TileSpriteArray.Array.data[27].m_Data
       value: 
       objectReference: {fileID: 21300010, guid: c90f092d1fa9c44ff9d8a35c5233f129, type: 3}
+    - target: {fileID: 3741976177018606980, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2350
+      objectReference: {fileID: 0}
+    - target: {fileID: 3741976177018606980, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 345.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552286745480886358, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2591
+      objectReference: {fileID: 0}
+    - target: {fileID: 1552286745480886358, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -732
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357459532534884443, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2703
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357459532534884443, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df1222867dc854c87a3e12a04beb6824, type: 3}
+--- !u!1 &484699376 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3158518977383536380, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
+  m_PrefabInstance: {fileID: 1584397114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &484699377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484699376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72dcf4ae180404985a12e5109d30de9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 1
 --- !u!1001 &818567387
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -414,7 +456,8 @@ PrefabInstance:
       propertyPath: m_UiScaleMode
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2802050374607474767, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 76bc7543a77bc4854ad768eadf137e40, type: 3}
 --- !u!1 &1678391573
 GameObject:

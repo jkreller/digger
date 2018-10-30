@@ -34,7 +34,7 @@ public class Background : MonoBehaviour {
         if (molePlayer) {
             if (moveWithPlayer) {
                 // keep staying with player
-                var playerPos = molePlayer.transform.position;
+                var playerPos = mainCamera.transform.position;
                 playerPos.z = transform.position.z;
                 transform.position = playerPos;
             }
