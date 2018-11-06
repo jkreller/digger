@@ -228,9 +228,24 @@ public class MolePlayer : Humanoid {
 
         if (other.gameObject.CompareTag("Finish")) {
             hasFinished = true;
-            //gameLogic.nextScene();
+            loadGame.safeData.diamonds += gameLogic.getBlueDiamonds();
+            if(loadGame.currentLevelData.diamondShow[0]){
+                loadGame.safeData.diamonds += 2;
+            }
+            if (loadGame.currentLevelData.diamondShow[1])
+            {
+                loadGame.safeData.diamonds += 5;
+            }
+            if (loadGame.currentLevelData.diamondShow[2])
+            {
+                loadGame.safeData.diamonds += 10;
+            }
+            if (loadGame.currentLevelData.diamondShow[3])
+            {
+                loadGame.safeData.diamonds += 25;
+            }
             loadGame.saveLevel(loadGame.currentLevelData);
-            Debug.Log(loadGame.currentLevelData.blue);
+            loadGame.Save(loadGame.safeData);
             gameLogic.chooseScene(1);
         }
     }

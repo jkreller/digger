@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
+using UnityEngine.UI;
 
 public class initialiseGame : MonoBehaviour
 {
@@ -14,11 +15,22 @@ public class initialiseGame : MonoBehaviour
 
         if (!File.Exists(Application.persistentDataPath + "/saveGame.gd"))
         {
-                SafeData testData = new SafeData();
-                testData.levels = levelData;
-                loadGame.Save(testData);
-                loadGame.Load();
+            SafeData testData = new SafeData();
+            testData.levels = levelData;
+            loadGame.Save(testData);
+
         }
-     }
+
+      
+    }
+
+	private void Start()
+	{
+        
+        loadGame.Load();
+        GameObject countObject = GameObject.Find("DiamondCounter");
+        Text blueCount = countObject.GetComponent<Text>();
+        blueCount.text = loadGame.safeData.diamonds.ToString();
+	}
 }
 

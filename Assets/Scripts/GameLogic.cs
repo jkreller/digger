@@ -24,7 +24,10 @@ public class GameLogic : MonoBehaviour {
         if (countObject) {
             blueCount = countObject.GetComponent<Text>();
         }
-        blueTotal = loadGame.currentLevelData.blueTotal;
+        if (loadGame.currentLevelData != null)
+        {
+            blueTotal = loadGame.currentLevelData.blueTotal;
+        }
         updateDiamondText();
 
         fadeCount = fadeImage.color.a;
@@ -46,6 +49,10 @@ public class GameLogic : MonoBehaviour {
             loadGame.currentLevelData.blue = blueDiamonds; 
         }
 
+    }
+
+    public int getBlueDiamonds(){
+        return blueDiamonds;
     }
 
     /*
