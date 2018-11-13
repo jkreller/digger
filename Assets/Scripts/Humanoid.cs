@@ -35,7 +35,7 @@ public abstract class Humanoid : MonoBehaviour {
         // avoid sliding
         Vector2 easeVelocity = body2D.velocity;
         easeVelocity.x *= 0.7f;
-
+		
         body2D.velocity = easeVelocity;
     }
     /*
