@@ -5,6 +5,7 @@ using UnityEngine;
 public class ButtonShop : MonoBehaviour
 {
     protected Animator animator;
+    protected bool isPressed;
 
     // Start is called before the first frame update
     void Start()
@@ -17,21 +18,44 @@ public class ButtonShop : MonoBehaviour
     {
     }
 
-    void pressButton()
-    {
-        animator.SetInteger("AnimState", 1);
+    void SetButtonPressed() {
+        animator.SetInteger("AnimState", 2);
+        // todo Buy here!
     }
 
-    void releaseButton()
+    void SetButtonReleased()
     {
-        animator.SetInteger("AnimState", 2);
+        animator.SetInteger("AnimState", 0);
+        isPressed = false;
+    }
+
+    void PressButton()
+    {
+        if (!isPressed) {
+            isPressed = true;
+            animator.SetInteger("AnimState", 1);
+        }
+    }
+
+    void ReleaseButton()
+    {
+        if (isPressed)
+        {
+            animator.SetInteger("AnimState", 3);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            pressButton();
+            foreach (ContactPoint2D hit in other.contacts)
+            {
+                // if hit on top
+                if (hit.normal.y < -0.9f) {
+                    PressButton();
+                }
+            }
         }
     }
 
@@ -39,7 +63,7 @@ public class ButtonShop : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            releaseButton();
+            ReleaseButton();
         }
     }
 }
