@@ -32301,7 +32301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4965932505848480, guid: abc15c2661dcf470491e6fd4ca00084e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4965932505848480, guid: abc15c2661dcf470491e6fd4ca00084e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -32339,9 +32339,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: SkyBackground
       objectReference: {fileID: 0}
-    - target: {fileID: 23695792230973896, guid: abc15c2661dcf470491e6fd4ca00084e, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: d04e429da85ba4385abad23cd582902a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abc15c2661dcf470491e6fd4ca00084e, type: 3}
