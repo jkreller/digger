@@ -11,7 +11,7 @@ public class initialiseGame : MonoBehaviour
 
     void Awake()
     {
-        //File.Delete(Application.persistentDataPath + "/saveGame.gd");
+        File.Delete(Application.persistentDataPath + "/saveGame.gd");
 
         if (!File.Exists(Application.persistentDataPath + "/saveGame.gd"))
         {
