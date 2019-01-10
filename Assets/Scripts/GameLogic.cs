@@ -10,6 +10,7 @@ public class GameLogic : MonoBehaviour {
     private int blueDiamonds;
     private int blueTotal;
     private Text blueCount;
+    private Text blueSumCount;
     private int diamonds;
     private float fadeCount;
     private bool finishedFading;
@@ -21,14 +22,21 @@ public class GameLogic : MonoBehaviour {
     void Start()
     {
         GameObject countObject = GameObject.Find("DiamondCount");
+        GameObject sumObject = GameObject.Find("DiamondSum");
+
         if (countObject) {
             blueCount = countObject.GetComponent<Text>();
         }
+        else
+        {
+            blueSumCount = sumObject.GetComponent<Text>();
+        }
+
         if (loadGame.currentLevelData != null)
         {
             blueTotal = loadGame.currentLevelData.blueTotal;
         }
-        updateDiamondText();
+        UpdateDiamondText();
 
         fadeCount = fadeImage.color.a;
         fadeImage.gameObject.SetActive(false);
@@ -41,9 +49,9 @@ public class GameLogic : MonoBehaviour {
     /*
      * Add diamonds to count
      */
-    public void addBlueDiamonds(){
+    public void AddBlueDiamonds(){
         blueDiamonds++;
-        updateDiamondText();
+        UpdateDiamondText();
         if(blueDiamonds > loadGame.currentLevelData.blue)
         {
             loadGame.currentLevelData.blue = blueDiamonds; 
@@ -51,38 +59,42 @@ public class GameLogic : MonoBehaviour {
 
     }
 
-    public int getBlueDiamonds(){
+    public int GetBlueDiamonds(){
         return blueDiamonds;
     }
 
     /*
      * Switches to next scene with fading
      */
-    public void nextScene() {
+    public void NextScene() {
         StartCoroutine(Fade("In"));
-        StartCoroutine(coroutineNextScene());
+        StartCoroutine(CoroutineNextScene());
     }
 
-    public void chooseScene(int sceneIndex) {
+    public void ChooseScene(int sceneIndex) {
         StartCoroutine(Fade("In"));
-        StartCoroutine(coroutineNextScene(sceneIndex));
+        StartCoroutine(CoroutineNextScene(sceneIndex));
     }
 
     /*
      * Switches to first scene with fading
      */
-    public void restartGame()
+    public void RestartGame()
     {
         StartCoroutine(Fade("In"));
-        StartCoroutine(coroutineNextScene(0));
+        StartCoroutine(CoroutineNextScene(0));
     }
 
     /*
      * Updates diamond count text in view
      */
-    private void updateDiamondText() {
+    public void UpdateDiamondText() {
         if (blueCount) {
             blueCount.text = blueDiamonds.ToString()+"/"+blueTotal.ToString();
+        }
+        else if (blueSumCount)
+        {
+            blueSumCount.text = loadGame.safeData.diamonds.ToString();
         }
     }
 
@@ -130,7 +142,7 @@ public class GameLogic : MonoBehaviour {
      * Coroutine for switching to next scene, i.e. after fading
      * If toStartingScene is true the first scene is loaded
      */
-    private IEnumerator coroutineNextScene(int sceneIndex = -1) {
+    private IEnumerator CoroutineNextScene(int sceneIndex = -1) {
         while (!finishedFading)
             yield return null;
 

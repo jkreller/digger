@@ -1,26 +1,49 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ButtonShop : MonoBehaviour
 {
     protected Animator animator;
     protected bool isPressed;
+    protected MolePlayer mole;
+    protected GameLogic gameLogic;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        mole = FindObjectOfType<MolePlayer>();
+        gameLogic = FindObjectOfType<GameLogic>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void Buy()
     {
+        if (!string.IsNullOrEmpty(mole.costume) && !loadGame.safeData.purchasedCostumes.Contains(mole.costume))
+        {
+            int diamondsBefore = loadGame.safeData.diamonds;
+            int costs = int.Parse(GameObject.Find(mole.costume).transform.Find("Diamonds").Find("DiamondAmount").GetComponent<Text>().text);
+
+            if (!(diamondsBefore - costs < 0))
+            {
+                // pay
+                loadGame.safeData.diamonds = diamondsBefore - costs;
+                // add costume
+                loadGame.safeData.purchasedCostumes.Add(mole.costume);
+                // set costume
+                loadGame.safeData.currentCostume = mole.costume;
+
+                loadGame.Save(loadGame.safeData);
+
+                gameLogic.UpdateDiamondText();
+            }
+        }
     }
 
     void SetButtonPressed() {
         animator.SetInteger("AnimState", 2);
-        // todo Buy here!
+        Buy();
     }
 
     void SetButtonReleased()

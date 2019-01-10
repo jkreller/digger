@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 [System.Serializable]
 public class SafeData
 {
@@ -12,7 +13,6 @@ public class SafeData
     public int yellowDiamonds;
     public int blackDiamonds;
     public int specialDiamonds;
-    public SafeData(){
-        
-    }
+    public string currentCostume;
+    public List<string> purchasedCostumes = new List<string>();
 }

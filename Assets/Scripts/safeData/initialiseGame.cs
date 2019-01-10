@@ -12,25 +12,24 @@ public class initialiseGame : MonoBehaviour
     void Awake()
     {
         //File.Delete(Application.persistentDataPath + "/saveGame.gd");
-
         if (!File.Exists(Application.persistentDataPath + "/saveGame.gd"))
         {
             SafeData testData = new SafeData();
             testData.levels = levelData;
             loadGame.Save(testData);
-
         }
-
-      
     }
 
 	private void Start()
 	{
-        
         loadGame.Load();
         GameObject countObject = GameObject.Find("DiamondCounter");
-        Text blueCount = countObject.GetComponent<Text>();
-        blueCount.text = loadGame.safeData.diamonds.ToString();
+
+        if (countObject)
+        {
+            Text blueCount = countObject.GetComponent<Text>();
+            blueCount.text = loadGame.safeData.diamonds.ToString();
+        }
 	}
 }
 

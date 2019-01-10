@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -9,6 +10,7 @@ public class MolePlayer : Humanoid {
     private Tilemap digableMap;
     private GameLogic gameLogic;
     private InputController inputController;
+
     private bool isGrounded = false;
     private bool isHittingLeft = false;
     private bool isHittingRight = false;
@@ -20,10 +22,15 @@ public class MolePlayer : Humanoid {
     private Transform checkerRightUpper;
     private Transform checkerRightLower;
     private List<string> movingDirections = new List<string>();
+    private string movingControlled;
+
     private bool hasFinished;
     private GameObject chest;
     private Chest chestClass;
     private bool isHittingChest;
+
+    public string costume;
+    private Sprite[] subSprites;
 
     /*
      * initializing Moleplayer and all of the needed classes
@@ -55,6 +62,9 @@ public class MolePlayer : Humanoid {
             gameLogic = logic.GetComponent<GameLogic>();
             inputController = gameLogic.GetComponent<InputController>();
         }
+
+        costume = loadGame.safeData.currentCostume;
+        subSprites = Resources.LoadAll<Sprite>("Mole/" + costume);
     }
 	
     /*
@@ -80,7 +90,7 @@ public class MolePlayer : Humanoid {
 
         movingDirections = new List<string>();
 
-        if (inputController.movingHorizontal > 0) {
+        if (inputController.movingHorizontal > 0 || movingControlled == "right") {
             if (!isHittingRight)
             {
                 movingDirections.Add("right");
@@ -89,9 +99,8 @@ public class MolePlayer : Humanoid {
             {
                 spriteRenderer.flipX = false;
             }
-            animator.SetInteger("AnimState", 1);
 
-        } else if (inputController.movingHorizontal < 0) {
+        } else if (inputController.movingHorizontal < 0 || movingControlled == "left") {
             if (!isHittingLeft)
             {
                 movingDirections.Add("left");
@@ -100,7 +109,6 @@ public class MolePlayer : Humanoid {
             {
                 spriteRenderer.flipX = true;
             }
-            animator.SetInteger("AnimState", 1);
         } else {
             animator.SetInteger("AnimState", 0);
         }
@@ -119,7 +127,24 @@ public class MolePlayer : Humanoid {
         }
 
         // move player
-        Move(movingDirections);
+        if (movingDirections.Count > 0)
+        {
+            Move(movingDirections);
+        }
+    }
+
+    private void LateUpdate()
+    {
+        if (!string.IsNullOrEmpty(costume))
+        {
+            string[] oldSpriteNameList = spriteRenderer.sprite.name.Split('_');
+            Sprite newSprite = Array.Find(subSprites, item => item.name.Split('_')[item.name.Split('_').Length - 1] == oldSpriteNameList[oldSpriteNameList.Length - 1]);
+
+            if (newSprite)
+            {
+                spriteRenderer.sprite = newSprite;
+            }
+        }
     }
 
     protected void Dig() {
@@ -137,6 +162,8 @@ public class MolePlayer : Humanoid {
         if (inputController.isLookingDown)
         {
             // dig down
+            animator.SetInteger("AnimState", 4);
+
             tilePosition.y -= digTileHeight;
             tilesToDestroy.Add(tilePosition);
 
@@ -184,6 +211,62 @@ public class MolePlayer : Humanoid {
             }
         }
     }
+
+    new protected void Move(List<string> directions)
+    {
+        if (directions.Contains("left") || directions.Contains("right"))
+        {
+            animator.SetInteger("AnimState", 1);
+        }
+
+        base.Move(directions);
+    }
+
+    protected IEnumerator MoveToXCoroutine(float targetX)
+    {
+        while (Mathf.Abs(transform.position.x - targetX) > 1)
+        {
+            if (transform.position.x > targetX)
+            {
+                movingControlled = "left";
+            }
+            else
+            {
+                movingControlled = "right";
+            }
+
+            yield return new WaitForEndOfFrame();
+        }
+
+        movingControlled = null;
+    }
+
+    public void ChangeCostume(string costumeName)
+    {
+        StartCoroutine(ChangeCostumeCoroutine(costumeName));
+    }
+
+    protected IEnumerator ChangeCostumeCoroutine(string costumeName)
+    {
+        GameObject curtain = GameObject.Find("Curtain");
+
+        animator.SetInteger("AnimState", 1);
+
+        StartCoroutine(MoveToXCoroutine(curtain.transform.position.x));
+
+        while (movingControlled != null)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        StartCoroutine(MoveToXCoroutine(curtain.transform.position.x + 74));
+
+        this.costume = costumeName;
+        subSprites = Resources.LoadAll<Sprite>("Mole/" + costumeName);
+    }
+
     /*
      * check collision triggerobjects (for collect coins, and finish the level)
      */
@@ -192,7 +275,7 @@ public class MolePlayer : Humanoid {
             Diamond diamond = other.gameObject.GetComponent<Diamond>();
             if (diamond.blue)
             {
-                gameLogic.addBlueDiamonds();
+                gameLogic.AddBlueDiamonds();
             }
             else
             {
@@ -228,7 +311,7 @@ public class MolePlayer : Humanoid {
 
         if (other.gameObject.CompareTag("Finish")) {
             hasFinished = true;
-            loadGame.safeData.diamonds += gameLogic.getBlueDiamonds();
+            loadGame.safeData.diamonds += gameLogic.GetBlueDiamonds();
             if(loadGame.currentLevelData.diamondShow[0]){
                 loadGame.safeData.diamonds += 2;
             }
@@ -244,11 +327,12 @@ public class MolePlayer : Humanoid {
             {
                 loadGame.safeData.diamonds += 25;
             }
-            loadGame.saveLevel(loadGame.currentLevelData);
+            loadGame.SaveLevel(loadGame.currentLevelData);
             loadGame.Save(loadGame.safeData);
-            gameLogic.chooseScene(1);
+            gameLogic.ChooseScene(1);
         }
     }
+
     /*
      * collisison with chestobject
      */
