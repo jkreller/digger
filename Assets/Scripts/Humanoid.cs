@@ -38,6 +38,7 @@ public abstract class Humanoid : MonoBehaviour {
 		
         body2D.velocity = easeVelocity;
     }
+
     /*
      * moving humanoid
      */
@@ -68,12 +69,14 @@ public abstract class Humanoid : MonoBehaviour {
         // apply force
         body2D.AddForce(force, ForceMode2D.Impulse);
     }
+
     /*
      * start move with string of direction
      */
     protected void Move(string direction) {
         Move(new List<string>() { direction });
     }
+
     /*
      * respawn humanoid
      */

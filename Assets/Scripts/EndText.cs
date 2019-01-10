@@ -15,6 +15,6 @@ public class EndText : MonoBehaviour
 
     void RestartGame()
     {
-        gameLogic.restartGame();
+        gameLogic.RestartGame();
     }
 }

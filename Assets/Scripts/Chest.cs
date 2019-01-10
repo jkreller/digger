@@ -53,6 +53,6 @@ public class Chest : MonoBehaviour
 
         yield return new WaitForSeconds(secondsAfterOpening);
 
-        gameLogic.nextScene();
+        gameLogic.NextScene();
     }
 }
