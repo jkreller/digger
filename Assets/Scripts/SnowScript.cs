@@ -14,9 +14,6 @@ public class SnowScript : MonoBehaviour
     {
         scale = this.transform.localScale.x;
         yPosition = this.transform.position.y;
-      
-
-
     }
 
     // Update is called once per frame
@@ -27,11 +24,9 @@ public class SnowScript : MonoBehaviour
         timer -= Time.deltaTime;
         if(timer <= 0)
         {
-            GameObject generatedSnow1 = (GameObject)Instantiate(snow, new Vector3(Random.Range(transform.position.x - transform.localScale.x / 2, transform.position.x + transform.localScale.x), transform.position.y + transform.localScale.y+8 / 2, Random.Range(-2,2)), transform.rotation);
-            GameObject generatedSnow2 = (GameObject)Instantiate(snow, new Vector3(Random.Range(transform.position.x - transform.localScale.x / 2, transform.position.x + transform.localScale.x), transform.position.y + transform.localScale.y+8 / 2, Random.Range(-2,2)), transform.rotation);
+            GameObject generatedSnow1 = (GameObject)Instantiate(snow, new Vector3(Random.Range(transform.position.x - transform.localScale.x-100, transform.position.x + transform.localScale.x*10), transform.position.y + transform.localScale.y+2 / 2, Random.Range(-2,2)), transform.rotation);
+            GameObject generatedSnow2 = (GameObject)Instantiate(snow, new Vector3(Random.Range(transform.position.x - transform.localScale.x-100, transform.position.x + transform.localScale.x*10), transform.position.y + transform.localScale.y+2 / 2, Random.Range(-2,2)), transform.rotation);
             timer = Random.Range(0f, 0.3f);
         }
-
-
     }
 }
