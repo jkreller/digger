@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RoboEnemy : Humanoid {
     public float timerBeforeMove;
-    public bool moveIfYouSee = true;
+    public bool moveOnVisible = true;
     public float moleJumpScale = 300f;
     public bool shouldMove = true;
     public bool shouldJump;
@@ -30,13 +30,22 @@ public class RoboEnemy : Humanoid {
         {
             isHittingSide = -1;
         }
+
+        if (!moveOnVisible)
+        {
+            move = true;
+        }
     }
+
     /*
      * If the camera sees the enemie it starts to move
      */
     void OnBecameVisible()
     {
-        move = true;
+        if (moveOnVisible)
+        {
+            move = true;
+        }
     }
 
     /*
@@ -72,8 +81,9 @@ public class RoboEnemy : Humanoid {
             }
         }
     }
+
     /*
-     * on collision with player object
+     * On collision with player object
      */
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -98,6 +108,9 @@ public class RoboEnemy : Humanoid {
             }
     }
 
+    /*
+     * On collision with world
+     */    
     void OnCollisionStay2D(Collision2D collision)
     {
         foreach (ContactPoint2D hit in collision.contacts)

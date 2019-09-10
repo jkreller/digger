@@ -9,6 +9,7 @@ public class ButtonShop : MonoBehaviour
     protected bool isPressed;
     protected MolePlayer mole;
     protected GameLogic gameLogic;
+    protected CostumeAssortment costumeAssortment;
 
     // Start is called before the first frame update
     void Start()
@@ -16,6 +17,7 @@ public class ButtonShop : MonoBehaviour
         animator = GetComponent<Animator>();
         mole = FindObjectOfType<MolePlayer>();
         gameLogic = FindObjectOfType<GameLogic>();
+        costumeAssortment = FindObjectOfType<CostumeAssortment>();
     }
 
     void Buy()
@@ -32,13 +34,15 @@ public class ButtonShop : MonoBehaviour
                 // add costume
                 loadGame.safeData.purchasedCostumes.Add(mole.costume);
                 // set costume
-                loadGame.safeData.currentCostume = mole.costume;
+                loadGame.safeData.SetCurrentCostume(mole.costume);
 
                 loadGame.Save(loadGame.safeData);
 
                 gameLogic.UpdateDiamondText();
             }
         }
+
+        costumeAssortment.RefreshPurchasedCostumes();
     }
 
     void SetButtonPressed() {

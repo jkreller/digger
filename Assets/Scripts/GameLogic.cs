@@ -76,6 +76,20 @@ public class GameLogic : MonoBehaviour {
         StartCoroutine(CoroutineNextScene(sceneIndex));
     }
 
+    public void ChooseSceneByPath(string scenePath)
+    {
+        int sceneIndex = SceneUtility.GetBuildIndexByScenePath(scenePath);
+
+        if (sceneIndex >= 0)
+        {
+            ChooseScene(sceneIndex);
+        }
+        else
+        {
+            throw new UnityException("Can't found scene.");
+        }
+    }
+
     /*
      * Switches to first scene with fading
      */
@@ -114,7 +128,7 @@ public class GameLogic : MonoBehaviour {
                 {
                     fadeCount += speed;
                     fadeImage.color = new Color(0, 0, 0, fadeCount);
-                    yield return new WaitForEndOfFrame();
+                    yield return new WaitForSecondsRealtime(0.01f);
                 }
                 break;
             case "Out":
@@ -122,7 +136,7 @@ public class GameLogic : MonoBehaviour {
                 {
                     fadeCount -= speed;
                     fadeImage.color = new Color(0, 0, 0, fadeCount);
-                    yield return new WaitForEndOfFrame();
+                    yield return new WaitForSecondsRealtime(0.01f);
                 }
                 break;
         }
@@ -143,7 +157,7 @@ public class GameLogic : MonoBehaviour {
      * If toStartingScene is true the first scene is loaded
      */
     private IEnumerator CoroutineNextScene(int sceneIndex = -1) {
-        while (!finishedFading)
+        while (!finishedFading || Time.timeScale == 0)
             yield return null;
 
         finishedFading = false;
@@ -155,8 +169,6 @@ public class GameLogic : MonoBehaviour {
         else{
             actualSceneIndex = SceneManager.GetActiveScene().buildIndex + 1;
         }
-
-
 
         AsyncOperation asyncLoad;
         asyncLoad = SceneManager.LoadSceneAsync(actualSceneIndex);

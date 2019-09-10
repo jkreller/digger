@@ -1,78 +1,216 @@
 fileFormatVersion: 2
 guid: 44410b4a534414a62abc283088dfc078
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: mole
-    21300002: mole_idle
-    21300004: mole_walk_1
-    21300006: mole_walk_2
-    21300008: mole_walk_3
-    21300010: mole_walk_4
-    21300012: mole_walk_5
-    21300014: mole_walk_6
-    21300016: mole_walk_7
-    21300018: mole_walk_8
-    21300020: mole_walk_9
-    21300022: mole_spritesheet_0
-    21300024: mole_spritesheet_1
-    21300026: mole_spritesheet_2
-    21300028: mole_spritesheet_3
-    21300030: mole_spritesheet_4
-    21300032: mole_spritesheet_5
-    21300034: mole_spritesheet_6
-    21300036: mole_spritesheet_7
-    21300038: mole_spritesheet_8
-    21300040: mole_spritesheet_9
-    21300042: mole_spritesheet_10
-    21300044: mole_spritesheet_11
-    21300046: mole_spritesheet_12
-    21300048: mole_spritesheet_13
-    21300050: mole_spritesheet_14
-    21300052: mole_spritesheet_15
-    21300054: mole_spritesheet_16
-    21300056: mole_spritesheet_17
-    21300058: mole_spritesheet_18
-    21300060: mole_spritesheet_19
-    21300062: mole_spritesheet_20
-    21300064: mole_spritesheet_21
-    21300066: mole_spritesheet_22
-    21300068: mole_spritesheet_23
-    21300070: mole_spritesheet_24
-    21300072: mole_spritesheet_25
-    21300074: mole_spritesheet_26
-    21300076: mole_spritesheet_27
-    21300078: mole_spritesheet_28
-    21300080: mole_xmas_0
-    21300082: mole_xmas_1
-    21300084: mole_xmas_2
-    21300086: mole_xmas_3
-    21300088: mole_xmas_4
-    21300090: mole_xmas_5
-    21300092: mole_xmas_6
-    21300094: mole_xmas_7
-    21300096: mole_xmas_8
-    21300098: mole_xmas_9
-    21300100: mole_xmas_10
-    21300102: mole_xmas_11
-    21300104: mole_xmas_12
-    21300106: mole_xmas_13
-    21300108: mole_xmas_14
-    21300110: mole_xmas_15
-    21300112: mole_xmas_16
-    21300114: mole_xmas_17
-    21300116: mole_xmas_18
-    21300118: mole_xmas_19
-    21300120: mole_xmas_20
-    21300122: mole_xmas_21
-    21300124: mole_xmas_22
-    21300126: mole_xmas_23
-    21300128: mole_xmas_24
-    21300130: mole_xmas_25
-    21300132: mole_xmas_26
-    21300134: mole_xmas_27
-    21300136: mole_xmas_28
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: mole
+  - first:
+      213: 21300002
+    second: mole_idle
+  - first:
+      213: 21300004
+    second: mole_walk_1
+  - first:
+      213: 21300006
+    second: mole_walk_2
+  - first:
+      213: 21300008
+    second: mole_walk_3
+  - first:
+      213: 21300010
+    second: mole_walk_4
+  - first:
+      213: 21300012
+    second: mole_walk_5
+  - first:
+      213: 21300014
+    second: mole_walk_6
+  - first:
+      213: 21300016
+    second: mole_walk_7
+  - first:
+      213: 21300018
+    second: mole_walk_8
+  - first:
+      213: 21300020
+    second: mole_walk_9
+  - first:
+      213: 21300022
+    second: mole_spritesheet_0
+  - first:
+      213: 21300024
+    second: mole_spritesheet_1
+  - first:
+      213: 21300026
+    second: mole_spritesheet_2
+  - first:
+      213: 21300028
+    second: mole_spritesheet_3
+  - first:
+      213: 21300030
+    second: mole_spritesheet_4
+  - first:
+      213: 21300032
+    second: mole_spritesheet_5
+  - first:
+      213: 21300034
+    second: mole_spritesheet_6
+  - first:
+      213: 21300036
+    second: mole_spritesheet_7
+  - first:
+      213: 21300038
+    second: mole_spritesheet_8
+  - first:
+      213: 21300040
+    second: mole_spritesheet_9
+  - first:
+      213: 21300042
+    second: mole_spritesheet_10
+  - first:
+      213: 21300044
+    second: mole_spritesheet_11
+  - first:
+      213: 21300046
+    second: mole_spritesheet_12
+  - first:
+      213: 21300048
+    second: mole_spritesheet_13
+  - first:
+      213: 21300050
+    second: mole_spritesheet_14
+  - first:
+      213: 21300052
+    second: mole_spritesheet_15
+  - first:
+      213: 21300054
+    second: mole_spritesheet_16
+  - first:
+      213: 21300056
+    second: mole_spritesheet_17
+  - first:
+      213: 21300058
+    second: mole_spritesheet_18
+  - first:
+      213: 21300060
+    second: mole_spritesheet_19
+  - first:
+      213: 21300062
+    second: mole_spritesheet_20
+  - first:
+      213: 21300064
+    second: mole_spritesheet_21
+  - first:
+      213: 21300066
+    second: mole_spritesheet_22
+  - first:
+      213: 21300068
+    second: mole_spritesheet_23
+  - first:
+      213: 21300070
+    second: mole_spritesheet_24
+  - first:
+      213: 21300072
+    second: mole_spritesheet_25
+  - first:
+      213: 21300074
+    second: mole_spritesheet_26
+  - first:
+      213: 21300076
+    second: mole_spritesheet_27
+  - first:
+      213: 21300078
+    second: mole_spritesheet_28
+  - first:
+      213: 21300080
+    second: mole_xmas_0
+  - first:
+      213: 21300082
+    second: mole_xmas_1
+  - first:
+      213: 21300084
+    second: mole_xmas_2
+  - first:
+      213: 21300086
+    second: mole_xmas_3
+  - first:
+      213: 21300088
+    second: mole_xmas_4
+  - first:
+      213: 21300090
+    second: mole_xmas_5
+  - first:
+      213: 21300092
+    second: mole_xmas_6
+  - first:
+      213: 21300094
+    second: mole_xmas_7
+  - first:
+      213: 21300096
+    second: mole_xmas_8
+  - first:
+      213: 21300098
+    second: mole_xmas_9
+  - first:
+      213: 21300100
+    second: mole_xmas_10
+  - first:
+      213: 21300102
+    second: mole_xmas_11
+  - first:
+      213: 21300104
+    second: mole_xmas_12
+  - first:
+      213: 21300106
+    second: mole_xmas_13
+  - first:
+      213: 21300108
+    second: mole_xmas_14
+  - first:
+      213: 21300110
+    second: mole_xmas_15
+  - first:
+      213: 21300112
+    second: mole_xmas_16
+  - first:
+      213: 21300114
+    second: mole_xmas_17
+  - first:
+      213: 21300116
+    second: mole_xmas_18
+  - first:
+      213: 21300118
+    second: mole_xmas_19
+  - first:
+      213: 21300120
+    second: mole_xmas_20
+  - first:
+      213: 21300122
+    second: mole_xmas_21
+  - first:
+      213: 21300124
+    second: mole_xmas_22
+  - first:
+      213: 21300126
+    second: mole_xmas_23
+  - first:
+      213: 21300128
+    second: mole_xmas_24
+  - first:
+      213: 21300130
+    second: mole_xmas_25
+  - first:
+      213: 21300132
+    second: mole_xmas_26
+  - first:
+      213: 21300134
+    second: mole_xmas_27
+  - first:
+      213: 21300136
+    second: mole_xmas_28
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 8
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -190,6 +328,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: fd2784baaf0ea4753a9057e7b0c4403b
+      internalID: 21300080
       vertices: []
       indices: 
       edges: []
@@ -210,6 +349,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 8f89335b689134b5fadb7340a2c8c994
+      internalID: 21300082
       vertices: []
       indices: 
       edges: []
@@ -230,6 +370,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ef01771dd439144a785ec008da5561de
+      internalID: 21300084
       vertices: []
       indices: 
       edges: []
@@ -250,6 +391,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 39d6844290b5442658f9dfa40a2d4ee4
+      internalID: 21300086
       vertices: []
       indices: 
       edges: []
@@ -270,6 +412,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 593cae2f0130f411f8724cc7ebb9b5a0
+      internalID: 21300088
       vertices: []
       indices: 
       edges: []
@@ -290,6 +433,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ea31ac2f6dab34a73802d3e5962f5b77
+      internalID: 21300090
       vertices: []
       indices: 
       edges: []
@@ -310,6 +454,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 93af1e4bf164d4057ae115126422cadc
+      internalID: 21300092
       vertices: []
       indices: 
       edges: []
@@ -330,6 +475,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 18f1e0ab337ca4e28a130b16e322e2b8
+      internalID: 21300094
       vertices: []
       indices: 
       edges: []
@@ -350,6 +496,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ace4b2a15cfca4b60a27fa02ee372b88
+      internalID: 21300096
       vertices: []
       indices: 
       edges: []
@@ -370,6 +517,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1d38c349c1df14fe486fab63e995e978
+      internalID: 21300098
       vertices: []
       indices: 
       edges: []
@@ -390,6 +538,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 639795f875ecc4693a618adb3cf8aca0
+      internalID: 21300100
       vertices: []
       indices: 
       edges: []
@@ -410,6 +559,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: e1cddec5d07d645ec92c1c9da7a1bd9a
+      internalID: 21300102
       vertices: []
       indices: 
       edges: []
@@ -430,6 +580,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6b78e64157a354ec1a25512c1c7ef877
+      internalID: 21300104
       vertices: []
       indices: 
       edges: []
@@ -450,6 +601,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f21e25ce038f14a49a6f055fbda32830
+      internalID: 21300106
       vertices: []
       indices: 
       edges: []
@@ -470,6 +622,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: de25d4888d9a94a32bc870ffd8e9b385
+      internalID: 21300108
       vertices: []
       indices: 
       edges: []
@@ -490,6 +643,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 32ef9e4ec3d954e70bccff29bde937c7
+      internalID: 21300110
       vertices: []
       indices: 
       edges: []
@@ -510,6 +664,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: a8e03352af2e94a6287313c8d201ccf0
+      internalID: 21300112
       vertices: []
       indices: 
       edges: []
@@ -530,6 +685,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b70d6b7d8e91e4ec188ffe9458eb9568
+      internalID: 21300114
       vertices: []
       indices: 
       edges: []
@@ -550,6 +706,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ecad607267d91462fadc8bf62d65bf40
+      internalID: 21300116
       vertices: []
       indices: 
       edges: []
@@ -570,6 +727,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0e85d8478fc014d3dad1022591ae5f49
+      internalID: 21300118
       vertices: []
       indices: 
       edges: []
@@ -590,6 +748,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9794195ae22024e1493b8d6f09741645
+      internalID: 21300120
       vertices: []
       indices: 
       edges: []
@@ -610,6 +769,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4c0ff60e26c1c46c38ce321efef2dfd2
+      internalID: 21300122
       vertices: []
       indices: 
       edges: []
@@ -630,6 +790,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 661ffe2bbe02c49a2995770bcc3e1635
+      internalID: 21300124
       vertices: []
       indices: 
       edges: []
@@ -650,6 +811,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c6880b585963741759d46e657b0944e2
+      internalID: 21300126
       vertices: []
       indices: 
       edges: []
@@ -670,6 +832,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 0905d28caa8c647acaaccdb2b7aeec84
+      internalID: 21300128
       vertices: []
       indices: 
       edges: []
@@ -690,6 +853,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 3e8465693a0a94ebd85586174ad5eb42
+      internalID: 21300130
       vertices: []
       indices: 
       edges: []
@@ -710,6 +874,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9e0d9a62bf9404857b6eec8b2f6b7359
+      internalID: 21300132
       vertices: []
       indices: 
       edges: []
@@ -730,6 +895,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: fc6cf82dbb9fc46358bee5d703e1ccc9
+      internalID: 21300134
       vertices: []
       indices: 
       edges: []
@@ -750,6 +916,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 03136728425ee499786621ebb1446c02
+      internalID: 21300136
       vertices: []
       indices: 
       edges: []
@@ -758,10 +925,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 164a68e81555c4fdcade37e8f72502fd
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: Mole
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

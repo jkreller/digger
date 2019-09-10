@@ -15,4 +15,15 @@ public class SafeData
     public int specialDiamonds;
     public string currentCostume;
     public List<string> purchasedCostumes = new List<string>();
+
+    public void SetCurrentCostume(string costumeName)
+    {
+        if (purchasedCostumes.Contains(costumeName))
+        {
+            currentCostume = costumeName;
+        } else if (costumeName == "mole_standard")
+        {
+            currentCostume = null;
+        }
+    }
 }

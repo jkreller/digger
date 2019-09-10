@@ -6,6 +6,7 @@ using UnityEngine.Tilemaps;
 
 public class MolePlayer : Humanoid {
     public float checkerRadius = 5;
+    public string costume;
 
     private Tilemap digableMap;
     private GameLogic gameLogic;
@@ -29,8 +30,8 @@ public class MolePlayer : Humanoid {
     private Chest chestClass;
     private bool isHittingChest;
 
-    public string costume;
     private Sprite[] subSprites;
+    private CostumeAssortment costumeAssortment;
 
     /*
      * initializing Moleplayer and all of the needed classes
@@ -63,12 +64,13 @@ public class MolePlayer : Humanoid {
             inputController = gameLogic.GetComponent<InputController>();
         }
 
+        costumeAssortment = FindObjectOfType<CostumeAssortment>();
         costume = loadGame.safeData.currentCostume;
-        subSprites = Resources.LoadAll<Sprite>("Mole/" + costume);
+        LoadSubSprites();
     }
 	
     /*
-     * overwriting the update of the humanoidclass
+     * overwriting the update of the Humanoid class
      */
 	protected override void FixedUpdate () {
         base.FixedUpdate();
@@ -130,6 +132,21 @@ public class MolePlayer : Humanoid {
         if (movingDirections.Count > 0)
         {
             Move(movingDirections);
+
+            if (inputController.isDigging)
+            {
+                if (inputController.isLookingUp)
+                {
+                    animator.SetInteger("AnimState", 7);
+                } else if (inputController.isLookingDown)
+                {
+                    animator.SetInteger("AnimState", 8);
+                }
+                else
+                {
+                    animator.SetInteger("AnimState", 6);
+                }
+            }
         }
     }
 
@@ -145,6 +162,11 @@ public class MolePlayer : Humanoid {
                 spriteRenderer.sprite = newSprite;
             }
         }
+    }
+
+    protected void LoadSubSprites()
+    {
+        subSprites = Resources.LoadAll<Sprite>("Mole/" + costume);
     }
 
     protected void Dig() {
@@ -224,7 +246,7 @@ public class MolePlayer : Humanoid {
 
     protected IEnumerator MoveToXCoroutine(float targetX)
     {
-        while (Mathf.Abs(transform.position.x - targetX) > 1)
+        while (Mathf.Abs(transform.position.x - targetX) > 0.005 * Screen.width)
         {
             if (transform.position.x > targetX)
             {
@@ -241,18 +263,57 @@ public class MolePlayer : Humanoid {
         movingControlled = null;
     }
 
-    public void ChangeCostume(string costumeName)
+    public void ChangeCostumeWithoutSelect(string costumeName)
     {
-        StartCoroutine(ChangeCostumeCoroutine(costumeName));
+        string currentCostume = loadGame.safeData.currentCostume;
+        if (costumeName != currentCostume || !(costumeName == "mole_standard" && currentCostume == null))
+        {
+            ChangeCostume(costumeName);
+        }
     }
 
-    protected IEnumerator ChangeCostumeCoroutine(string costumeName)
+    public void ChangeCostumeWithSelect(string costumeName)
     {
-        GameObject curtain = GameObject.Find("Curtain");
 
+        ChangeCostume(costumeName, false, true);
+    }
+
+    private void ChangeCostume(string costumeName, bool goToRight = true, bool saveCostume = false)
+    {
+        bool shouldChange = false;
+
+        if (costumeName == "mole_standard" && costume == null)
+        {
+            return;
+        }
+        else if (costumeName != costume)
+        {
+            GameObject curtain = GameObject.Find("Curtain");
+            float curtainX = curtain.transform.position.x;
+
+            if (goToRight)
+            {
+                StartCoroutine(ChangeCostumeCoroutine(costumeName, curtainX, curtainX + 74));
+            }
+            else
+            {
+                StartCoroutine(ChangeCostumeCoroutine(costumeName, curtainX, curtainX - 100));
+            }
+
+            if (saveCostume)
+            {
+                loadGame.safeData.SetCurrentCostume(costumeName);
+                loadGame.Save(loadGame.safeData);
+                costumeAssortment.RefreshPurchasedCostumes();
+            }
+        }
+    }
+
+    protected IEnumerator ChangeCostumeCoroutine(string costumeName, float walkToPosition1, float walkToPosition2)
+    {
         animator.SetInteger("AnimState", 1);
 
-        StartCoroutine(MoveToXCoroutine(curtain.transform.position.x));
+        StartCoroutine(MoveToXCoroutine(walkToPosition1));
 
         while (movingControlled != null)
         {
@@ -261,10 +322,10 @@ public class MolePlayer : Humanoid {
 
         yield return new WaitForSeconds(0.5f);
 
-        StartCoroutine(MoveToXCoroutine(curtain.transform.position.x + 74));
+        StartCoroutine(MoveToXCoroutine(walkToPosition2));
 
         this.costume = costumeName;
-        subSprites = Resources.LoadAll<Sprite>("Mole/" + costumeName);
+        LoadSubSprites();
     }
 
     /*
@@ -329,7 +390,7 @@ public class MolePlayer : Humanoid {
             }
             loadGame.SaveLevel(loadGame.currentLevelData);
             loadGame.Save(loadGame.safeData);
-            gameLogic.ChooseScene(1);
+            gameLogic.ChooseScene(0);
         }
     }
 

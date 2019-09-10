@@ -1,23 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
     private GameLogic gameLogic;
     private InputController inputController;
-    private Canvas pauseMenu;
+    private GameObject pauseMenu;
+    private Button backToMenuButton;
+
     /*
-     * initializing menue
+     * Initializing menue
      */
     private void Start()
     {
         gameLogic = this.gameObject.GetComponent<GameLogic>();
         inputController = this.gameObject.GetComponent<InputController>();
-        pauseMenu = GameObject.Find("PauseMenu").GetComponent<Canvas>();
+        pauseMenu = GameObject.Find("PauseMenuCanvas");
+        pauseMenu.SetActive(false);
     }
+
     /*
-     * get pausemenue on button
+     * Get pausemenu on button
      */
     void Update()
     {
@@ -26,20 +32,27 @@ public class PauseMenu : MonoBehaviour
             TogglePause();
         }
     }
+
     /*
-     * set timescale on pausemenue
+     * Set timescale on pausemenu
      */
-    void TogglePause()
+    public void TogglePause()
     {
         if (Time.timeScale == 0f)
         {
             Time.timeScale = 1f;
-            pauseMenu.enabled = false;
+            pauseMenu.SetActive(false);
         }
         else
         {
             Time.timeScale = 0f;
-            pauseMenu.enabled = true;
+            pauseMenu.SetActive(true);
         }
+    }
+
+    public void ChooseScene(int sceneIndex)
+    {
+        TogglePause();
+        SceneManager.LoadScene(sceneIndex);
     }
 }

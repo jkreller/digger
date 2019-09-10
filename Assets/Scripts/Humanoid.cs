@@ -11,6 +11,7 @@ public abstract class Humanoid : MonoBehaviour {
 
     protected Rigidbody2D body2D;
     protected SpriteRenderer spriteRenderer;
+    protected MeshRenderer mes;
     protected Animator animator;
 
     /*
@@ -19,8 +20,11 @@ public abstract class Humanoid : MonoBehaviour {
     protected virtual void Start() {
         body2D = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        //if (!spriteRenderer)
+        //{
+        //    spriteRenderer = GetComponent<MeshRenderer>();
+        //}
         animator = GetComponent<Animator>();
-
         if (!isStartingToRight) {
             spriteRenderer.flipX = true;
         }

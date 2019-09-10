@@ -1,49 +1,174 @@
 fileFormatVersion: 2
 guid: 0c2060c7577124f47a1625551f77bb8b
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: mole
-    21300002: mole_idle
-    21300004: mole_walk_1
-    21300006: mole_walk_2
-    21300008: mole_walk_3
-    21300010: mole_walk_4
-    21300012: mole_walk_5
-    21300014: mole_walk_6
-    21300016: mole_walk_7
-    21300018: mole_walk_8
-    21300020: mole_walk_9
-    21300022: mole_spritesheet_0
-    21300024: mole_spritesheet_1
-    21300026: mole_spritesheet_2
-    21300028: mole_spritesheet_3
-    21300030: mole_spritesheet_4
-    21300032: mole_spritesheet_5
-    21300034: mole_spritesheet_6
-    21300036: mole_spritesheet_7
-    21300038: mole_spritesheet_8
-    21300040: mole_spritesheet_9
-    21300042: mole_spritesheet_10
-    21300044: mole_spritesheet_11
-    21300046: mole_spritesheet_12
-    21300048: mole_spritesheet_13
-    21300050: mole_spritesheet_14
-    21300052: mole_spritesheet_15
-    21300054: mole_spritesheet_16
-    21300056: mole_spritesheet_17
-    21300058: mole_spritesheet_18
-    21300060: mole_spritesheet_19
-    21300062: mole_spritesheet_20
-    21300064: mole_spritesheet_21
-    21300066: mole_spritesheet_22
-    21300068: mole_spritesheet_23
-    21300070: mole_spritesheet_24
-    21300072: mole_spritesheet_25
-    21300074: mole_spritesheet_26
-    21300076: mole_spritesheet_27
-    21300078: mole_spritesheet_28
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: mole
+  - first:
+      213: 21300002
+    second: mole_idle
+  - first:
+      213: 21300004
+    second: mole_walk_1
+  - first:
+      213: 21300006
+    second: mole_walk_2
+  - first:
+      213: 21300008
+    second: mole_walk_3
+  - first:
+      213: 21300010
+    second: mole_walk_4
+  - first:
+      213: 21300012
+    second: mole_walk_5
+  - first:
+      213: 21300014
+    second: mole_walk_6
+  - first:
+      213: 21300016
+    second: mole_walk_7
+  - first:
+      213: 21300018
+    second: mole_walk_8
+  - first:
+      213: 21300020
+    second: mole_walk_9
+  - first:
+      213: 21300022
+    second: mole_spritesheet_0
+  - first:
+      213: 21300024
+    second: mole_spritesheet_1
+  - first:
+      213: 21300026
+    second: mole_spritesheet_2
+  - first:
+      213: 21300028
+    second: mole_spritesheet_3
+  - first:
+      213: 21300030
+    second: mole_spritesheet_4
+  - first:
+      213: 21300032
+    second: mole_spritesheet_5
+  - first:
+      213: 21300034
+    second: mole_spritesheet_6
+  - first:
+      213: 21300036
+    second: mole_spritesheet_7
+  - first:
+      213: 21300038
+    second: mole_spritesheet_8
+  - first:
+      213: 21300040
+    second: mole_spritesheet_9
+  - first:
+      213: 21300042
+    second: mole_spritesheet_10
+  - first:
+      213: 21300044
+    second: mole_spritesheet_11
+  - first:
+      213: 21300046
+    second: mole_spritesheet_12
+  - first:
+      213: 21300048
+    second: mole_spritesheet_13
+  - first:
+      213: 21300050
+    second: mole_spritesheet_14
+  - first:
+      213: 21300052
+    second: mole_spritesheet_15
+  - first:
+      213: 21300054
+    second: mole_spritesheet_16
+  - first:
+      213: 21300056
+    second: mole_spritesheet_17
+  - first:
+      213: 21300058
+    second: mole_spritesheet_18
+  - first:
+      213: 21300060
+    second: mole_spritesheet_19
+  - first:
+      213: 21300062
+    second: mole_spritesheet_20
+  - first:
+      213: 21300064
+    second: mole_spritesheet_21
+  - first:
+      213: 21300066
+    second: mole_spritesheet_22
+  - first:
+      213: 21300068
+    second: mole_spritesheet_23
+  - first:
+      213: 21300070
+    second: mole_spritesheet_24
+  - first:
+      213: 21300072
+    second: mole_spritesheet_25
+  - first:
+      213: 21300074
+    second: mole_spritesheet_26
+  - first:
+      213: 21300076
+    second: mole_spritesheet_27
+  - first:
+      213: 21300078
+    second: mole_spritesheet_28
+  - first:
+      213: 5925819175269606429
+    second: mole_spritesheet_29
+  - first:
+      213: -4117708485064101492
+    second: mole_spritesheet_30
+  - first:
+      213: 853295024405780434
+    second: mole_spritesheet_31
+  - first:
+      213: 1583376122507239397
+    second: mole_spritesheet_32
+  - first:
+      213: -8294588754167777293
+    second: mole_spritesheet_33
+  - first:
+      213: -7492881523006034833
+    second: mole_spritesheet_34
+  - first:
+      213: -8284865369378191273
+    second: mole_spritesheet_35
+  - first:
+      213: -6260096002216318118
+    second: mole_spritesheet_36
+  - first:
+      213: 1890204442446208835
+    second: mole_spritesheet_37
+  - first:
+      213: 9120791545221171233
+    second: mole_spritesheet_38
+  - first:
+      213: -1667921774727042107
+    second: mole_spritesheet_39
+  - first:
+      213: -3770224244657467639
+    second: mole_spritesheet_40
+  - first:
+      213: 8764856703187339713
+    second: mole_spritesheet_41
+  - first:
+      213: -3231892612765812528
+    second: mole_spritesheet_42
+  - first:
+      213: 3462546835127551248
+    second: mole_spritesheet_43
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 8
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -150,7 +275,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 320
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -160,7 +285,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f762b6fb8531c43ec9c2a7a124a3f97f
+      spriteID: 237cfcb90f1664ec2b1ea55113d91edd
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -170,7 +296,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 320
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -180,7 +306,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 708d60f3c0d5f45bf9cd3ae2e6e6fd87
+      spriteID: 7ae8ca9397a004a3c9b36a5d510ea236
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
@@ -190,7 +317,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 320
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -200,7 +327,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 968714a73629e46c99b56e1b44cf7e7d
+      spriteID: 6c58bc32858d2474ead49c8273fd17f2
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
@@ -210,7 +338,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 320
+        y: 512
         width: 64
         height: 64
       alignment: 0
@@ -220,7 +348,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9aa5a11b01b444b9a816638086535a22
+      spriteID: 6f1e7938cb52c4126929183e4d578a39
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
@@ -230,6 +359,237 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
+        y: 512
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a03664cdf55d7418cb8d082afbcd87f8
+      internalID: 21300030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56037bba262e477b87169b691a38768
+      internalID: 21300032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfe9e9beb459b4dc4be733cbfcb61995
+      internalID: 21300034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0912723b987d844b4936905c9b38833d
+      internalID: 21300036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20633b52b65b1441a8d1430e0ec425cc
+      internalID: 21300038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 448
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 799932ba69a1f42669afb46f7f72b9fa
+      internalID: 21300040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2896e2aa498e438599014bf87b633c0
+      internalID: 21300042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175520a1085034d7fac3149b46869b62
+      internalID: 21300044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_12
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679bdb5cac11a46bc8adeecee6e6e525
+      internalID: 21300046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_13
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d95e372f882db401e855089e602df3c7
+      internalID: 21300048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_14
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 384
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554572227a91c4b81a9a753d16ca292d
+      internalID: 21300050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_15
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 320
         width: 64
         height: 64
@@ -240,227 +600,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 421beafb1e09f4d14a41dc6df393e8de
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mole_spritesheet_5
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4a1952f32ac8e49f1b422e86594223e9
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mole_spritesheet_6
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8412495570f0441959303da4f7fa931b
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mole_spritesheet_7
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 75d3be6c9e99d442ab8c49939e40a48a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mole_spritesheet_8
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5958862b5f7a648c19bac12153819af0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mole_spritesheet_9
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 256
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 774da982987fe4ba3a006051accd78de
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mole_spritesheet_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7b061a63dd2c44fc595bdeb7fec57cc4
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mole_spritesheet_11
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aab541da65f204ae597d4b4340430c4f
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mole_spritesheet_12
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9f10d9b9fb1649fbb510a2cf0bcb312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mole_spritesheet_13
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4b144d2ba2dc54bb0ab956e12a30bd2a
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mole_spritesheet_14
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 192
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e90698e4624604e7f92eb8177107c39c
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: mole_spritesheet_15
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 64
-        height: 64
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f28b0e6b4daa4fc39ccfd703ebb95e2
+      spriteID: f51a2a24b4f5e4f8187fa44d7a4a0156
+      internalID: 21300052
       vertices: []
       indices: 
       edges: []
@@ -470,7 +611,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 128
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -480,7 +621,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1aca7456034a47c891a1723f541c796
+      spriteID: 5dfd65dff75b54397837201b17332604
+      internalID: 21300054
       vertices: []
       indices: 
       edges: []
@@ -490,7 +632,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 128
-        y: 128
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -500,7 +642,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd7cbfa65e37140ef91af882b9babca3
+      spriteID: f82d793b7b9144afa9f36d15227e4cfa
+      internalID: 21300056
       vertices: []
       indices: 
       edges: []
@@ -510,7 +653,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 192
-        y: 128
+        y: 320
         width: 64
         height: 64
       alignment: 0
@@ -520,7 +663,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c2f992bbbca0434ab3658d08981d6fd
+      spriteID: 68d4af777317a48609f7f9da49d14366
+      internalID: 21300058
       vertices: []
       indices: 
       edges: []
@@ -530,6 +674,237 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f05d5a2189f7344aabed68cbfb92ce16
+      internalID: 21300060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c750b58c052094d359cd15f4b9cb3d96
+      internalID: 21300062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_21
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c6088de72ed24aa2b813108e321ef23
+      internalID: 21300064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_22
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079cdda9984874ae8a27bd05b8b41c15
+      internalID: 21300066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_23
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0114d0a03e954c56aa699593e032184
+      internalID: 21300068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_24
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff36f85fc04ee47a88494c54dde54196
+      internalID: 21300070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e96c4200ead34d988b3640d684abf14
+      internalID: 21300072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514d1e2837fae4e629dd12edcce479d7
+      internalID: 21300074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_27
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23c39ea1a4b6a4b5aa3eb8e82e1c7ddb
+      internalID: 21300076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc32622da1e6e45c9af0ad33cd3d6fb1
+      internalID: 21300078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_29
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bfb58f7d8ed644ee89407afd71736882
+      internalID: 5925819175269606429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_30
+      rect:
+        serializedVersion: 2
+        x: 0
         y: 128
         width: 64
         height: 64
@@ -540,13 +915,98 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c70529157618845829a35ba61cc2eb7f
+      spriteID: cb9b83a564c484ca88609160d74acc3e
+      internalID: -4117708485064101492
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mole_spritesheet_20
+      name: mole_spritesheet_31
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b885139e0e635468eae7aca6eeb20854
+      internalID: 853295024405780434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_32
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734556cda00c542a3ab556b2fc754640
+      internalID: 1583376122507239397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_33
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47eed41d199ee4d5bb588404de8123bf
+      internalID: -8294588754167777293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_34
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c0588bfb68f54889bda9113b19aad98
+      internalID: -7492881523006034833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: mole_spritesheet_35
       rect:
         serializedVersion: 2
         x: 0
@@ -560,13 +1020,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bbd44ef7bcdf04f84b219c7768de90d4
+      spriteID: 2fb478d57258e4722988d64923fca8ae
+      internalID: -8284865369378191273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mole_spritesheet_21
+      name: mole_spritesheet_36
       rect:
         serializedVersion: 2
         x: 64
@@ -580,13 +1041,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d37396e54c02c43069c18171fa35fdff
+      spriteID: 8790f58a22c174eceb4cca9bbb59c42f
+      internalID: -6260096002216318118
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mole_spritesheet_22
+      name: mole_spritesheet_37
       rect:
         serializedVersion: 2
         x: 128
@@ -600,13 +1062,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 001292af46e934096b4e30c23c73ec73
+      spriteID: d38e46a5bed764531a23ee4c173e0d0b
+      internalID: 1890204442446208835
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mole_spritesheet_23
+      name: mole_spritesheet_38
       rect:
         serializedVersion: 2
         x: 192
@@ -620,13 +1083,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25b5d0fce038f4d6cbe2cc2e78260dab
+      spriteID: 5032198daa1e048679fa79fdad344ab5
+      internalID: 9120791545221171233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mole_spritesheet_24
+      name: mole_spritesheet_39
       rect:
         serializedVersion: 2
         x: 256
@@ -640,13 +1104,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3d1242a1a18f84432a01e7a2a64634ac
+      spriteID: 5252a42dbb627469582f6056469cff9d
+      internalID: -1667921774727042107
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mole_spritesheet_25
+      name: mole_spritesheet_40
       rect:
         serializedVersion: 2
         x: 0
@@ -660,13 +1125,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b38e09ce45aa4cecb9a2a04293c8f8d
+      spriteID: 7f0024126af954c58b9b69ca7c5ad4d4
+      internalID: -3770224244657467639
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mole_spritesheet_26
+      name: mole_spritesheet_41
       rect:
         serializedVersion: 2
         x: 64
@@ -680,13 +1146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a3d8d68627db45ddbe4ea5e9e4d4c52
+      spriteID: 5ce9a46263b8540339d4b5988a2e79a8
+      internalID: 8764856703187339713
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mole_spritesheet_27
+      name: mole_spritesheet_42
       rect:
         serializedVersion: 2
         x: 128
@@ -700,13 +1167,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e23acddd59a944d4960767ac9cd864a
+      spriteID: 93be1ea061539425e8d8d3bfb0816ae0
+      internalID: -3231892612765812528
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: mole_spritesheet_28
+      name: mole_spritesheet_43
       rect:
         serializedVersion: 2
         x: 192
@@ -720,7 +1188,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2ca19f9f87c0f451f83c30887b6530e6
+      spriteID: a6848b711b67a49fb913eddc2aa2fddf
+      internalID: 3462546835127551248
       vertices: []
       indices: 
       edges: []
@@ -729,10 +1198,12 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 164a68e81555c4fdcade37e8f72502fd
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
   spritePackingTag: Mole
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
