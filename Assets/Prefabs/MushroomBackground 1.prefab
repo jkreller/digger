@@ -130,10 +130,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 627c69e7745664963b782345c4c8935a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  referenceLayer: {fileID: 7744851448070769819}
-  parallaxSpeed: 0.25
+  parallaxSpeedX: 0.3
+  parallaxSpeedY: 0.2
   backgroundSize: 10
-  placeAtStart: 1
   overflow: 0.1
 --- !u!1 &7744851448062733984
 GameObject:

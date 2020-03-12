@@ -6,49 +6,29 @@ public class ParallaxBackground : MonoBehaviour
 {
     [Header("References")]
     private Camera mainCamera;
-    [SerializeField] private Transform referenceLayer;
-    private MolePlayer molePlayer;
 
     [Header("Options")]
-    [SerializeField] private float parallaxSpeed = 0.25f;
+    [SerializeField] private float parallaxSpeedX = 1;
+    [SerializeField] private float parallaxSpeedY = 0.2f;
     [SerializeField] private float backgroundSize = 10;
-    [SerializeField] private bool placeAtStart = true;
     [SerializeField] private float overflow;
 
     [Header("Logic fields")]
     private Transform[] layers;
     private float lastCameraX;
     private float lastCameraY;
-    private int leftIndex;
-    private int rightIndex;
 
     void Start()
     {
         // Set references
         mainCamera = Camera.main;
-        molePlayer = FindObjectOfType<MolePlayer>();
 
         int childCount = transform.childCount;
         layers = new Transform[childCount];
         for (int i = 0; i < childCount; i++)
         {
             layers[i] = transform.GetChild(i);
-            if (placeAtStart)
-            {
-                // Position layers in root element
-                layers[i].transform.position = new Vector3(transform.position.x, transform.position.y, layers[i].transform.position.z);
-            }
         }
-
-        if (placeAtStart)
-        {
-            // Position root element according to camera
-            PositionAndSize();
-        }
-
-        // Set indeces
-        leftIndex = 0;
-        rightIndex = layers.Length - 1;
     }
 
     private void Update()
@@ -57,36 +37,15 @@ public class ParallaxBackground : MonoBehaviour
         transform.position = new Vector3(transform.position.x, mainCamera.transform.position.y, transform.position.z);
 
         // Parallax effect
-        float dX = mainCamera.transform.position.x - lastCameraX;
-        float dY = mainCamera.transform.position.y - lastCameraY;
-        transform.position += Vector3.right * dX * parallaxSpeed;
-        transform.position += Vector3.up * dY * parallaxSpeed;
+        foreach (Transform child in transform)
+        {
+            float dX = mainCamera.transform.position.x - lastCameraX;
+            float dY = mainCamera.transform.position.y - lastCameraY;
+            child.transform.position += Vector3.right * dX * parallaxSpeedX * child.transform.position.z * 0.001f;
+            child.transform.position -= Vector3.up * dY * parallaxSpeedY * child.transform.position.z * 0.001f;
+        }
         lastCameraX = mainCamera.transform.position.x;
         lastCameraY = mainCamera.transform.position.y;
-    }
-
-    private void ScrollLeft()
-    {
-        float x = layers[leftIndex].position.x - backgroundSize;
-        layers[rightIndex].position = new Vector3(x, layers[rightIndex].position.y, layers[rightIndex].position.z);
-        leftIndex = rightIndex;
-        rightIndex--;
-        if (rightIndex < 0)
-        {
-            rightIndex = layers.Length - 1;
-        }
-    }
-
-    private void ScrollRight()
-    {
-        float x = layers[leftIndex].position.x + backgroundSize;
-        layers[leftIndex].position = new Vector3(x, layers[leftIndex].position.y, layers[leftIndex].position.z);
-        rightIndex = leftIndex;
-        leftIndex++;
-        if (leftIndex == layers.Length)
-        {
-            leftIndex = 0;
-        }
     }
 
     private void PositionAndSize()
@@ -96,7 +55,7 @@ public class ParallaxBackground : MonoBehaviour
         transform.position = new Vector3(cameraPos.x, cameraPos.y, transform.position.z);
 
         // Scale height of root element according to camera
-        SpriteRenderer spriteRenderer = referenceLayer.GetComponent<SpriteRenderer>();
+        SpriteRenderer spriteRenderer = transform.GetComponent<SpriteRenderer>();
 
         Vector3 newScale = Vector3.one;
 
