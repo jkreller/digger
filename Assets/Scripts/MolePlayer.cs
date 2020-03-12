@@ -33,6 +33,9 @@ public class MolePlayer : Humanoid {
     private Sprite[] subSprites;
     private CostumeAssortment costumeAssortment;
 
+    private bool redPotionActive;
+    private bool canDoubleJump = true;
+
     /*
      * initializing Moleplayer and all of the needed classes
      */
@@ -114,12 +117,30 @@ public class MolePlayer : Humanoid {
         } else {
             animator.SetInteger("AnimState", 0);
         }
-
+        if (isGrounded)
+        {
+            canDoubleJump = true;
+        }
         // jumping
         if (inputController.isJumping && isGrounded) {
             movingDirections.Add("up");
         }
+        // red potion double jump
+        else if(inputController.isJumping && !isGrounded)
+        {
+            if (redPotionActive)
+            {
+                
+                if (canDoubleJump)
+                {
+                    Debug.Log("test");
+                    movingDirections.Add("up");
+                    canDoubleJump = false;
+                }
 
+            }
+        }
+            
         // digging
         if (inputController.isDigging)
         {
@@ -391,6 +412,12 @@ public class MolePlayer : Humanoid {
             loadGame.SaveLevel(loadGame.currentLevelData);
             loadGame.Save(loadGame.safeData);
             gameLogic.ChooseScene(0);
+        }
+
+        if (other.gameObject.name == "red_potion")
+        {
+            redPotionActive = true;
+
         }
     }
 
