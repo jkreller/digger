@@ -25,7 +25,7 @@ public class JumpField : MonoBehaviour
                 // check if player hits top or side
                 if (hit.normal.y < 0)
                 {
-                    molePlayer.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
+                    molePlayer.gameObject.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(0, 0);
                     molePlayer.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 1000, ForceMode2D.Impulse);
                 }
             }

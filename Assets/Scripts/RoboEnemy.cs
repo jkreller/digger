@@ -42,9 +42,9 @@ public class RoboEnemy : Humanoid {
     /*
      * Update is called once per frame
      */
-    protected override void FixedUpdate()
+    protected override void Update()
     {
-        base.FixedUpdate();
+        base.Update();
 
         if (!hittingPlayer)
         {
@@ -86,7 +86,7 @@ public class RoboEnemy : Humanoid {
                     // check if player hits top or side and jump
                     if (hit.normal.y < 0)
                     {
-                        molePlayer.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                        molePlayer.gameObject.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
                         molePlayer.gameObject.GetComponent<Rigidbody2D>().AddForce(Vector2.up * moleJumpScale, ForceMode2D.Impulse);
                         Destroy(gameObject);
                     }

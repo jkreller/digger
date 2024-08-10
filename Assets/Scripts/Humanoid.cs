@@ -31,12 +31,12 @@ public abstract class Humanoid : MonoBehaviour {
     /*
      * checking if player is grounded
      */
-    protected virtual void FixedUpdate() {
+    protected virtual void Update() {
         // avoid sliding
-        Vector2 easeVelocity = body2D.velocity;
+        Vector2 easeVelocity = body2D.linearVelocity;
         easeVelocity.x *= 0.7f;
 		
-        body2D.velocity = easeVelocity;
+        body2D.linearVelocity = easeVelocity;
     }
 
     /*

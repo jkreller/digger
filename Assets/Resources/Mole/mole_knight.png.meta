@@ -1,96 +1,270 @@
 fileFormatVersion: 2
 guid: e264d88c568154338bba0c17331c0717
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: mole_knight_0
-    21300002: mole_knight_1
-    21300004: mole_knight_2
-    21300006: mole_knight_3
-    21300008: mole_knight_4
-    21300010: mole_knight_5
-    21300012: mole_knight_6
-    21300014: mole_knight_7
-    21300016: mole_knight_8
-    21300018: mole_knight_9
-    21300020: mole_knight_10
-    21300022: mole_knight_11
-    21300024: mole_knight_12
-    21300026: mole_knight_13
-    21300028: mole_knight_14
-    21300030: mole_knight_15
-    21300032: mole_knight_16
-    21300034: mole_knight_17
-    21300036: mole_knight_18
-    21300038: mole_knight_19
-    21300040: mole_knight_20
-    21300042: mole_knight_21
-    21300044: mole_knight_22
-    21300046: mole_knight_23
-    21300048: mole_knight_24
-    21300050: mole_knight_25
-    21300052: mole_knight_26
-    21300054: mole_knight_27
-    21300056: mole_knight_28
-    21300058: mole1_0
-    21300060: mole1_1
-    21300062: mole1_2
-    21300064: mole1_3
-    21300066: mole1_4
-    21300068: mole1_5
-    21300070: mole1_6
-    21300072: mole1_7
-    21300074: mole1_8
-    21300076: mole1_9
-    21300078: mole1_10
-    21300080: mole1_11
-    21300082: mole1_12
-    21300084: mole1_13
-    21300086: mole1_14
-    21300088: mole1_15
-    21300090: mole1_16
-    21300092: mole1_17
-    21300094: mole1_18
-    21300096: mole1_19
-    21300098: mole1_20
-    21300100: mole1_21
-    21300102: mole1_22
-    21300104: mole1_23
-    21300106: mole1_24
-    21300108: mole1_25
-    21300110: mole1_26
-    21300112: mole1_27
-    21300114: mole1_28
-    21300116: mole_spritesheet1_0
-    21300118: mole_spritesheet1_1
-    21300120: mole_spritesheet1_2
-    21300122: mole_spritesheet1_3
-    21300124: mole_spritesheet1_4
-    21300126: mole_spritesheet1_5
-    21300128: mole_spritesheet1_6
-    21300130: mole_spritesheet1_7
-    21300132: mole_spritesheet1_8
-    21300134: mole_spritesheet1_9
-    21300136: mole_spritesheet1_10
-    21300138: mole_spritesheet1_11
-    21300140: mole_spritesheet1_12
-    21300142: mole_spritesheet1_13
-    21300144: mole_spritesheet1_14
-    21300146: mole_spritesheet1_15
-    21300148: mole_spritesheet1_16
-    21300150: mole_spritesheet1_17
-    21300152: mole_spritesheet1_18
-    21300154: mole_spritesheet1_19
-    21300156: mole_spritesheet1_20
-    21300158: mole_spritesheet1_21
-    21300160: mole_spritesheet1_22
-    21300162: mole_spritesheet1_23
-    21300164: mole_spritesheet1_24
-    21300166: mole_spritesheet1_25
-    21300168: mole_spritesheet1_26
-    21300170: mole_spritesheet1_27
-    21300172: mole_spritesheet1_28
+  internalIDToNameTable:
+  - first:
+      213: 21300000
+    second: mole_knight_0
+  - first:
+      213: 21300002
+    second: mole_knight_1
+  - first:
+      213: 21300004
+    second: mole_knight_2
+  - first:
+      213: 21300006
+    second: mole_knight_3
+  - first:
+      213: 21300008
+    second: mole_knight_4
+  - first:
+      213: 21300010
+    second: mole_knight_5
+  - first:
+      213: 21300012
+    second: mole_knight_6
+  - first:
+      213: 21300014
+    second: mole_knight_7
+  - first:
+      213: 21300016
+    second: mole_knight_8
+  - first:
+      213: 21300018
+    second: mole_knight_9
+  - first:
+      213: 21300020
+    second: mole_knight_10
+  - first:
+      213: 21300022
+    second: mole_knight_11
+  - first:
+      213: 21300024
+    second: mole_knight_12
+  - first:
+      213: 21300026
+    second: mole_knight_13
+  - first:
+      213: 21300028
+    second: mole_knight_14
+  - first:
+      213: 21300030
+    second: mole_knight_15
+  - first:
+      213: 21300032
+    second: mole_knight_16
+  - first:
+      213: 21300034
+    second: mole_knight_17
+  - first:
+      213: 21300036
+    second: mole_knight_18
+  - first:
+      213: 21300038
+    second: mole_knight_19
+  - first:
+      213: 21300040
+    second: mole_knight_20
+  - first:
+      213: 21300042
+    second: mole_knight_21
+  - first:
+      213: 21300044
+    second: mole_knight_22
+  - first:
+      213: 21300046
+    second: mole_knight_23
+  - first:
+      213: 21300048
+    second: mole_knight_24
+  - first:
+      213: 21300050
+    second: mole_knight_25
+  - first:
+      213: 21300052
+    second: mole_knight_26
+  - first:
+      213: 21300054
+    second: mole_knight_27
+  - first:
+      213: 21300056
+    second: mole_knight_28
+  - first:
+      213: 21300058
+    second: mole1_0
+  - first:
+      213: 21300060
+    second: mole1_1
+  - first:
+      213: 21300062
+    second: mole1_2
+  - first:
+      213: 21300064
+    second: mole1_3
+  - first:
+      213: 21300066
+    second: mole1_4
+  - first:
+      213: 21300068
+    second: mole1_5
+  - first:
+      213: 21300070
+    second: mole1_6
+  - first:
+      213: 21300072
+    second: mole1_7
+  - first:
+      213: 21300074
+    second: mole1_8
+  - first:
+      213: 21300076
+    second: mole1_9
+  - first:
+      213: 21300078
+    second: mole1_10
+  - first:
+      213: 21300080
+    second: mole1_11
+  - first:
+      213: 21300082
+    second: mole1_12
+  - first:
+      213: 21300084
+    second: mole1_13
+  - first:
+      213: 21300086
+    second: mole1_14
+  - first:
+      213: 21300088
+    second: mole1_15
+  - first:
+      213: 21300090
+    second: mole1_16
+  - first:
+      213: 21300092
+    second: mole1_17
+  - first:
+      213: 21300094
+    second: mole1_18
+  - first:
+      213: 21300096
+    second: mole1_19
+  - first:
+      213: 21300098
+    second: mole1_20
+  - first:
+      213: 21300100
+    second: mole1_21
+  - first:
+      213: 21300102
+    second: mole1_22
+  - first:
+      213: 21300104
+    second: mole1_23
+  - first:
+      213: 21300106
+    second: mole1_24
+  - first:
+      213: 21300108
+    second: mole1_25
+  - first:
+      213: 21300110
+    second: mole1_26
+  - first:
+      213: 21300112
+    second: mole1_27
+  - first:
+      213: 21300114
+    second: mole1_28
+  - first:
+      213: 21300116
+    second: mole_spritesheet1_0
+  - first:
+      213: 21300118
+    second: mole_spritesheet1_1
+  - first:
+      213: 21300120
+    second: mole_spritesheet1_2
+  - first:
+      213: 21300122
+    second: mole_spritesheet1_3
+  - first:
+      213: 21300124
+    second: mole_spritesheet1_4
+  - first:
+      213: 21300126
+    second: mole_spritesheet1_5
+  - first:
+      213: 21300128
+    second: mole_spritesheet1_6
+  - first:
+      213: 21300130
+    second: mole_spritesheet1_7
+  - first:
+      213: 21300132
+    second: mole_spritesheet1_8
+  - first:
+      213: 21300134
+    second: mole_spritesheet1_9
+  - first:
+      213: 21300136
+    second: mole_spritesheet1_10
+  - first:
+      213: 21300138
+    second: mole_spritesheet1_11
+  - first:
+      213: 21300140
+    second: mole_spritesheet1_12
+  - first:
+      213: 21300142
+    second: mole_spritesheet1_13
+  - first:
+      213: 21300144
+    second: mole_spritesheet1_14
+  - first:
+      213: 21300146
+    second: mole_spritesheet1_15
+  - first:
+      213: 21300148
+    second: mole_spritesheet1_16
+  - first:
+      213: 21300150
+    second: mole_spritesheet1_17
+  - first:
+      213: 21300152
+    second: mole_spritesheet1_18
+  - first:
+      213: 21300154
+    second: mole_spritesheet1_19
+  - first:
+      213: 21300156
+    second: mole_spritesheet1_20
+  - first:
+      213: 21300158
+    second: mole_spritesheet1_21
+  - first:
+      213: 21300160
+    second: mole_spritesheet1_22
+  - first:
+      213: 21300162
+    second: mole_spritesheet1_23
+  - first:
+      213: 21300164
+    second: mole_spritesheet1_24
+  - first:
+      213: 21300166
+    second: mole_spritesheet1_25
+  - first:
+      213: 21300168
+    second: mole_spritesheet1_26
+  - first:
+      213: 21300170
+    second: mole_spritesheet1_27
+  - first:
+      213: 21300172
+    second: mole_spritesheet1_28
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -110,6 +284,8 @@ TextureImporter:
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -119,8 +295,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -141,11 +317,16 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -156,7 +337,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -167,7 +349,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -178,7 +361,8 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -189,6 +373,31 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -208,6 +417,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 08863f7f686204da797de840506e314d
+      internalID: 21300000
       vertices: []
       indices: 
       edges: []
@@ -228,6 +438,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cdc6d7c06de7549f2b0565129000cfe1
+      internalID: 21300002
       vertices: []
       indices: 
       edges: []
@@ -248,6 +459,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6a61e2da0438148c2b111a8f7764b46e
+      internalID: 21300004
       vertices: []
       indices: 
       edges: []
@@ -268,6 +480,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2313334af86e94f259a7651e365aa560
+      internalID: 21300006
       vertices: []
       indices: 
       edges: []
@@ -288,6 +501,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 447d4d38ee19041178a7c9a7caf10678
+      internalID: 21300008
       vertices: []
       indices: 
       edges: []
@@ -308,6 +522,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 30b28ff21852e4816b5b41990ffb63c4
+      internalID: 21300010
       vertices: []
       indices: 
       edges: []
@@ -328,6 +543,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 718496da26195488ea94ce549efaf1bc
+      internalID: 21300012
       vertices: []
       indices: 
       edges: []
@@ -348,6 +564,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c583b7417829541ab9f1cc8bcff191a4
+      internalID: 21300014
       vertices: []
       indices: 
       edges: []
@@ -368,6 +585,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c7e5a72cd25d44b41a8b266713552f6e
+      internalID: 21300016
       vertices: []
       indices: 
       edges: []
@@ -388,6 +606,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 394cf6939f8fd478a9679bef504c2f2b
+      internalID: 21300018
       vertices: []
       indices: 
       edges: []
@@ -408,6 +627,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 13d91d137958941dc925d9c7a7b6472e
+      internalID: 21300020
       vertices: []
       indices: 
       edges: []
@@ -428,6 +648,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: ded19781dda974af79acc20840d63319
+      internalID: 21300022
       vertices: []
       indices: 
       edges: []
@@ -448,6 +669,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 89be542cc2c4949f19e2f8de17227ae4
+      internalID: 21300024
       vertices: []
       indices: 
       edges: []
@@ -468,6 +690,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 53efef448eab64b3e854de855f4bebcf
+      internalID: 21300026
       vertices: []
       indices: 
       edges: []
@@ -488,6 +711,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 724583094a64d4844aed45fd2d908117
+      internalID: 21300028
       vertices: []
       indices: 
       edges: []
@@ -508,6 +732,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 658bf61412db54b17b7c33edb7f9c4b9
+      internalID: 21300030
       vertices: []
       indices: 
       edges: []
@@ -528,6 +753,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1bd6b1d937af845e99a698aef994591e
+      internalID: 21300032
       vertices: []
       indices: 
       edges: []
@@ -548,6 +774,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 9f987bfdaf1de4cc6b3b28268ba1c6e5
+      internalID: 21300034
       vertices: []
       indices: 
       edges: []
@@ -568,6 +795,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 2647f4db6ff7248d3b2abac7e5b5c27f
+      internalID: 21300036
       vertices: []
       indices: 
       edges: []
@@ -588,6 +816,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 06d602fe693c84d0794dc60d79fa9f52
+      internalID: 21300038
       vertices: []
       indices: 
       edges: []
@@ -608,6 +837,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4c972c5d43ea44c08b4a48aad76268a0
+      internalID: 21300040
       vertices: []
       indices: 
       edges: []
@@ -628,6 +858,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: d144110fd4cb549b88ea0d669ece4ae9
+      internalID: 21300042
       vertices: []
       indices: 
       edges: []
@@ -648,6 +879,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cd9d7579eeaea49dea4a1e902c6080b0
+      internalID: 21300044
       vertices: []
       indices: 
       edges: []
@@ -668,6 +900,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b49fa2ac3ded24c369d2c0c4db9f616c
+      internalID: 21300046
       vertices: []
       indices: 
       edges: []
@@ -688,6 +921,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 76260da3aa7b54e37adff9dc5afce32a
+      internalID: 21300048
       vertices: []
       indices: 
       edges: []
@@ -708,6 +942,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 612e0c19bc17b4cc1816adff740d9907
+      internalID: 21300050
       vertices: []
       indices: 
       edges: []
@@ -728,6 +963,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: f1479a658f00b4b00af5adbe4ffd3708
+      internalID: 21300052
       vertices: []
       indices: 
       edges: []
@@ -748,6 +984,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 08b357fdba8b449b9acb5c9448639757
+      internalID: 21300054
       vertices: []
       indices: 
       edges: []
@@ -768,6 +1005,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b307dbca3a9fa49db8234d01ad78b367
+      internalID: 21300056
       vertices: []
       indices: 
       edges: []
@@ -776,10 +1014,42 @@ TextureImporter:
     physicsShape: []
     bones: []
     spriteID: 3a646c79a05844635809830c86c6480d
+    internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      mole_knight_21: 21300042
+      mole_knight_1: 21300002
+      mole_knight_3: 21300006
+      mole_knight_24: 21300048
+      mole_knight_16: 21300032
+      mole_knight_23: 21300046
+      mole_knight_9: 21300018
+      mole_knight_25: 21300050
+      mole_knight_12: 21300024
+      mole_knight_14: 21300028
+      mole_knight_28: 21300056
+      mole_knight_6: 21300012
+      mole_knight_18: 21300036
+      mole_knight_8: 21300016
+      mole_knight_15: 21300030
+      mole_knight_7: 21300014
+      mole_knight_13: 21300026
+      mole_knight_20: 21300040
+      mole_knight_19: 21300038
+      mole_knight_2: 21300004
+      mole_knight_5: 21300010
+      mole_knight_0: 21300000
+      mole_knight_11: 21300022
+      mole_knight_26: 21300052
+      mole_knight_17: 21300034
+      mole_knight_10: 21300020
+      mole_knight_27: 21300054
+      mole_knight_22: 21300044
+      mole_knight_4: 21300008
   spritePackingTag: Mole
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

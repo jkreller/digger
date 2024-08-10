@@ -40,7 +40,7 @@ public class Background : MonoBehaviour {
             }
 
             // scrolling a bit when player jumps
-            var playerVelocity = molePlayer.GetComponent<Rigidbody2D>().velocity;
+            var playerVelocity = molePlayer.GetComponent<Rigidbody2D>().linearVelocity;
             parallaxOffsetY = moveWithPlayer ? playerVelocity.y * parallaxScrollSpeed / 10000 : 0;
         }
 

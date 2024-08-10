@@ -70,8 +70,8 @@ public class MolePlayer : Humanoid {
     /*
      * overwriting the update of the humanoidclass
      */
-	protected override void FixedUpdate () {
-        base.FixedUpdate();
+	protected override void Update () {
+        base.Update();
 
         // checking sides for not getting stuck
         var isHittingLeftUpper = Physics2D.OverlapCircle(checkerLeftUpper.position, checkerRadius, worldLayer);

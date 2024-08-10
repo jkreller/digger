@@ -19,8 +19,6 @@ public class SnowScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(this.transform.position);
-
         timer -= Time.deltaTime;
         if(timer <= 0)
         {

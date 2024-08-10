@@ -8,7 +8,7 @@ public class InputController : MonoBehaviour
     [HideInInspector]
     public float movingHorizontal { get; set; }
     [HideInInspector]
-    public bool isJumping;
+    public bool isJumping { get; set; }
     [HideInInspector]
     public bool isDigging { get; set; }
     [HideInInspector]
@@ -18,26 +18,8 @@ public class InputController : MonoBehaviour
     [HideInInspector]
     public bool pause;
 
-    private Touch startTouch;
-    private Touch endTouch;
     private GameObject mobileControlsObject;
     private bool onMobileDevice;
-
-    /*
-     * Getter and setter for isJumping property
-     */
-    public bool IsJumping
-    {
-        get { return isJumping; }
-        set
-        {
-            if (value)
-            {
-                StartCoroutine(SetJumpingFalse());
-            }
-            isJumping = value;
-        }
-    }
 
     /*
      * Getter and setter for pause property
@@ -53,15 +35,6 @@ public class InputController : MonoBehaviour
             }
             pause = value;
         }
-    }
-
-    /*
-     * Coroutine for set jumping false 
-     */
-    public IEnumerator SetJumpingFalse()
-    {
-        yield return new WaitForFixedUpdate();
-        isJumping = false;
     }
 
     /*
@@ -144,22 +117,9 @@ public class InputController : MonoBehaviour
                     {
                         movingHorizontal = 1f;
                     }
-
-                    if (touch.phase == TouchPhase.Began)
-                    {
-                        startTouch = touch;
-                    }
                     else if (touch.phase == TouchPhase.Ended)
                     {
                         movingHorizontal = 0;
-
-                        endTouch = touch;
-
-                        // if swipe up
-                        if (endTouch.position.y > startTouch.position.y + Screen.height / 16)
-                        {
-                            IsJumping = true;
-                        }
                     }
                 }
             }
