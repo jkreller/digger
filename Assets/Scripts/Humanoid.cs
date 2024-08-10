@@ -28,9 +28,9 @@ public abstract class Humanoid : MonoBehaviour {
         startingPoint = transform.position;
     }
 
-    /*
-     * checking if player is grounded
-     */
+    protected virtual void FixedUpdate() {
+    }
+
     protected virtual void Update() {
         // avoid sliding
         Vector2 easeVelocity = body2D.linearVelocity;

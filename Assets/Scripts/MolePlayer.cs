@@ -66,11 +66,8 @@ public class MolePlayer : Humanoid {
         costume = loadGame.safeData.currentCostume;
         subSprites = Resources.LoadAll<Sprite>("Mole/" + costume);
     }
-	
-    /*
-     * overwriting the update of the humanoidclass
-     */
-	protected override void Update () {
+
+    protected override void Update () {
         base.Update();
 
         // checking sides for not getting stuck
@@ -85,7 +82,6 @@ public class MolePlayer : Humanoid {
         // checking if player is grounded
         var isGroundedLeft = Physics2D.OverlapCircle(checkerBelowLeft.position, checkerRadius, worldLayer);
         var isGroundedRight = Physics2D.OverlapCircle(checkerBelowRight.position, checkerRadius, worldLayer);
-
         isGrounded = isGroundedLeft || isGroundedRight;
 
         movingDirections = new List<string>();

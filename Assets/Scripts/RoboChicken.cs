@@ -11,8 +11,8 @@ public class RoboChicken : RoboEnemy
     }
 
     // Fixed Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        base.Update();
+        base.FixedUpdate();
     }
 }
